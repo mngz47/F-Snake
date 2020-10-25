@@ -38,7 +38,8 @@
   },14000);
     </script>
 </div>
-  
+
+
 <div style="width:600px;margin-left:auto;margin-right:auto;background:gray;" >
 <div style="width:600px;" >
 <span style="font-size:3em;">F Snake</span>
@@ -48,6 +49,7 @@
 
 <div id="canvas" style="width:600px;height:400px;border: 3px solid blue;background:white;"  >
 <span id="food" style="font-size:2.2em;position:absolute;" >O</span>
+<span id="stacle" style="font-size:2.2em;position:absolute;" style="color:purple;" >X</span>
 <span id="head" style="color:red;font-size:2.2em;position:absolute;left:400px;top:200px;" >F</span>
 </div>
 </div>
@@ -134,6 +136,15 @@ location.reload();
 
 e('points').innerHTML = 'POINTS('+points+')';
 placeFood();
+
+}
+
+if(((e('stacle').offsetTop+20)>e('head').offsetTop && (e('stacle').offsetTop-20)<e('head').offsetTop) && 
+((e('stacle').offsetLeft+20)>e('head').offsetLeft && (e('stacle').offsetLeft-20)<e('head').offsetLeft)){
+
+alert('GAME OVER');
+game_over = true;
+location.reload();
 
 }
 
@@ -232,6 +243,27 @@ e('food').style.left = ll+"px";
 }
 
 placeFood();
+
+var sw = 1;
+
+function placeStacle(){
+
+var tt = Math.random()*(e('canvas').offsetHeight+e('canvas').offsetTop-20);
+while(tt<e('canvas').offsetTop){
+tt =  Math.random()*(e('canvas').offsetHeight+e('canvas').offsetTop-20);
+}
+var ll = Math.random()*(e('canvas').offsetWidth+e('canvas').offsetLeft-20);
+while(ll<e('canvas').offsetLeft){
+ll =  Math.random()*(e('canvas').offsetWidth+e('canvas').offsetLeft-20);
+}
+
+e('stacle').style.top = (sw?e('food').style.top:tt+"px");
+e('stacle').style.left = (sw?ll+"px":e('food').style.left);
+
+sw = (sw?0:1)
+}
+
+setInterval(placeStacle,7000);
 
 </script>
 </body>
