@@ -63,23 +63,29 @@ async function start(){
 
 while(!game_over){
 
-if(d=="r"){
+if(d=="r"){ //Moves snake head to the right
 //alert(e('head').style.left+"---"+e('head').offsetLeft+"---"+e('canvas').offsetWidth);
 
-if(e('head').offsetLeft>=(e('canvas').offsetWidth+e('canvas').offsetLeft-20)){
+if(e('head').offsetLeft>=(e('canvas').offsetWidth+e('canvas').offsetLeft-20)){ // Detect the bound of the canvas towars the right
 
 e('head').style.left= e('canvas').offsetLeft+"px";
+  
 }else{
 
 e('head').style.left= (e('head').offsetLeft+3)+"px";
+  
 }
+  
 }else if(d=="l"){
-if(e('head').offsetLeft<=e('canvas').offsetLeft){
+
+ if(e('head').offsetLeft<=e('canvas').offsetLeft){
 e('head').style.left = (e('canvas').offsetWidth+e('canvas').offsetLeft)+"px";
 
 }else{
 e('head').style.left = (e('head').offsetLeft-3)+"px";
 }
+  
+  
 }else if(d=="t"){
 if(e('head').offsetTop<=e('canvas').offsetTop){
 e('head').style.top = (e('canvas').offsetHeight+e('canvas').offsetTop-20)+"px";
