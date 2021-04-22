@@ -42,7 +42,7 @@ var mode = "easy";
 
 var stage = 1;
 
-document.body.onkeydown = function(e){
+document.body.onkeydown = function(e){ // Detect keys pressed on keyboard to change the direction of movement of the snake head F
 
 if(e.key=="a" | e.key=="ArrowLeft"){
 d="l";
@@ -61,52 +61,50 @@ var game_over = false;
 
 async function start(){
 
-while(!game_over){
+while(!game_over){ //continuosly move the snake head so long as the game is not over
 
 if(d=="r"){ //Moves snake head to the right
-//alert(e('head').style.left+"---"+e('head').offsetLeft+"---"+e('canvas').offsetWidth);
 
-if(e('head').offsetLeft>=(e('canvas').offsetWidth+e('canvas').offsetLeft-20)){ // Detect the bound of the canvas towars the right
-
-e('head').style.left= e('canvas').offsetLeft+"px";
+  if(e('head').offsetLeft>=(e('canvas').offsetWidth+e('canvas').offsetLeft-20)){ // Detect the bound of the canvas towards the right
+    e('head').style.left= e('canvas').offsetLeft+"px"; // move the snake head to the beginning of the canvas on the left
+  }else{ // If snake head hasn't reached canvas bound toward the right 
+    e('head').style.left= (e('head').offsetLeft+3)+"px"; // Move the snake by 3px to the right
+  }
   
-}else{
+}else if(d=="l"){ //Moves the snake head to the left 
 
-e('head').style.left= (e('head').offsetLeft+3)+"px";
-  
-}
-  
-}else if(d=="l"){
-
- if(e('head').offsetLeft<=e('canvas').offsetLeft){
-e('head').style.left = (e('canvas').offsetWidth+e('canvas').offsetLeft)+"px";
-
-}else{
-e('head').style.left = (e('head').offsetLeft-3)+"px";
-}
+  if(e('head').offsetLeft<=e('canvas').offsetLeft){ // Detect the bound of the canvas towards the left
+    e('head').style.left = (e('canvas').offsetWidth+e('canvas').offsetLeft)+"px"; // move the snake head to the end of the canvas on the right
+  }else{ // If snake head hasn't reached canvas bound toward the left 
+    e('head').style.left = (e('head').offsetLeft-3)+"px"; // Move the snake by -3px to the left 
+  }
   
   
-}else if(d=="t"){
-if(e('head').offsetTop<=e('canvas').offsetTop){
-e('head').style.top = (e('canvas').offsetHeight+e('canvas').offsetTop-20)+"px";
+}else if(d=="t"){ //Moves the snake head to the top
+  
+  if(e('head').offsetTop<=e('canvas').offsetTop){
+    e('head').style.top = (e('canvas').offsetHeight+e('canvas').offsetTop-20)+"px";
+  }else{
+    e('head').style.top = (e('head').offsetTop-3)+"px";
+  }
+  
 }else{
-e('head').style.top = (e('head').offsetTop-3)+"px";
-}
-}else{
-if(e('head').offsetTop>=(e('canvas').offsetHeight+e('canvas').offsetTop-20)){
-e('head').style.top = e('canvas').offsetTop+"px";
-}else{
-e('head').style.top = (e('head').offsetTop+3)+"px";
-}
+  
+  if(e('head').offsetTop>=(e('canvas').offsetHeight+e('canvas').offsetTop-20)){
+    e('head').style.top = e('canvas').offsetTop+"px";
+  }else{
+    e('head').style.top = (e('head').offsetTop+3)+"px";
+  }
+  
 }
 
 
 if(((e('food').offsetTop+20)>e('head').offsetTop && (e('food').offsetTop-20)<e('head').offsetTop) && 
-((e('food').offsetLeft+20)>e('head').offsetLeft && (e('food').offsetLeft-20)<e('head').offsetLeft)){
+((e('food').offsetLeft+20)>e('head').offsetLeft && (e('food').offsetLeft-20)<e('head').offsetLeft)){ //Detects if the head of the snake overlaps with food
 
-points+=1;
+points+=1; // Gives the player a point for getting the food
 
-if(points>=14){
+if(points>=14){ // Detects if user has gained enough points to move to next stage
 if(stage==7){
 alert('Congradulations Game Complete');
 }else if(confirm('Congradulations Stage '+(stage)+' Complete. Ready for stage '+(stage+1)+'?')){
