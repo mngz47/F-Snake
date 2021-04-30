@@ -88,7 +88,7 @@ if(d=="r"){ //Moves snake head to the right
     e('head').style.top = (e('head').offsetTop-3)+"px";
   }
   
-}else{
+}else{ //Moves the snake head to the bottom
   
   if(e('head').offsetTop>=(e('canvas').offsetHeight+e('canvas').offsetTop-20)){
     e('head').style.top = e('canvas').offsetTop+"px";
@@ -105,28 +105,31 @@ if(((e('food').offsetTop+20)>e('head').offsetTop && (e('food').offsetTop-20)<e('
 points+=1; // Gives the player a point for getting the food
 
 if(points>=14){ // Detects if user has gained enough points to move to next stage
-if(stage==7){
+
+  if(stage==7){ // Detects completion of game if user finishes stage 7
 alert('Congradulations Game Complete');
-}else if(confirm('Congradulations Stage '+(stage)+' Complete. Ready for stage '+(stage+1)+'?')){
+    // Alert and Confirm currently don't work on facebook games
+}else if(confirm('Congradulations Stage '+(stage)+' Complete. Ready for stage '+(stage+1)+'?')){ // Confirms if user is ready for next stage
 
-stage+=1;
-points=0;
+stage+=1; 
+points=0; //Resets points to prepare for new stage
 
-e('stacle').style.color = (stage==2?'red':(stage==3?'yellow':(color==4?'green':'purple')));
-setInterval(placeStacle,1000*(8-stage));
+e('stacle').style.color = (stage==2?'red':(stage==3?'yellow':(color==4?'green':'purple'))); //Changes color of obsatcle for new stage
+setInterval(placeStacle,1000*(8-stage));//Changes speed of obstacle for new stage
 
-}else{
+}else{ // If user is not ready to go to next stage
 location.reload();
 }
+  
 }
 
-e('points').innerHTML = 'POINTS('+points+')';
-placeFood();
+e('points').innerHTML = 'POINTS('+points+')'; //Shows recent points to user
+placeFood(); //Places food onto recent randomised position
 
 }
 
 if(((e('stacle').offsetTop+20)>e('head').offsetTop && (e('stacle').offsetTop-20)<e('head').offsetTop) && 
-((e('stacle').offsetLeft+20)>e('head').offsetLeft && (e('stacle').offsetLeft-20)<e('head').offsetLeft)){
+((e('stacle').offsetLeft+20)>e('head').offsetLeft && (e('stacle').offsetLeft-20)<e('head').offsetLeft)){ // Detects snake head overlap with obstacle
 
 alert('GAME OVER');
 game_over = true;
@@ -134,9 +137,9 @@ location.reload();
 
 }
 
-show_body(e('head').offsetLeft,e('head').offsetTop);
+show_body(e('head').offsetLeft,e('head').offsetTop); //renders the body of the snake
 
-speed = Math.round((40 - 40 * (points*3)/15));
+speed = Math.round((40 - 40 * (points*3)/15)); //increases speed of the snake as the points increase
 
 // e('speed').innerHTML = 'SPEED:'+Math.round(7 * (points*3)/15);
 
