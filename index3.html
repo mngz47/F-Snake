@@ -27,10 +27,59 @@
 </div>
 
 <div style="text-align:center;font-size:2.2em;">
-<a href=# onclick="d='l';return false;"  >L</a>
-<a href=# onclick="d='t';return false;"  >T</a>
-<a href=# onclick="d='b';return false;"  >D</a>
-<a href=# onclick="d='r';return false;" >R</a>
+ 
+  <table id=controls style="margin-left:auto;margin-right:auto;" >
+      <tr><td></td><td></td><td><a href=# onclick="d='t';"  >T</a></td><td></td></tr>
+      <tr><td></td><td><a href=# onclick="d='l';"  >L</a></td><td style="background-color:red;">O</td><td><a href=# onclick="d='r';" >R</a></td></tr>
+      <tr><td></td><td></td><td><a href=# onclick="d='b';"  >D</a></td><td></td></tr>
+    </table>
+	<script>
+	dragElement(document.getElementById("controls"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+	</script>
+
+  
 </div>
 <script>
 
