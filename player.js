@@ -10,7 +10,7 @@ async function findFlower(){
   }else if((e('food').offsetTop-20)<e('head').offsetTop){
  d = "b";
   }
-   }else if(!((e('food').offsetLeft+20)>e('head').offsetLeft && (e('food').offsetLeft-20)<e('head').offsetLeft)){
+   }else{ //(!((e('food').offsetLeft+20)>e('head').offsetLeft && (e('food').offsetLeft-20)<e('head').offsetLeft)){
   if((e('food').offsetLeft+20)>e('head').offsetLeft){
  d = "r";
   }else if((e('food').offsetLeft-20)<e('head').offsetLeft){
