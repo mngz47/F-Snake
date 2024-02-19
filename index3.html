@@ -20,7 +20,7 @@
 		<p>Avoid the obstacle and make it through the seven stages.</p>
 	<a href=# onclick="start();e('start').style.display='none';return false;" class="btn" >Start</a>
 	<a href=# onclick="challenge();e('start').style.display='none';return false;" class="btn" >Challenge</a>
-	<a href=# onclick="start();e('start').style.display='none';iniPlayer();return false;" class="btn" >Watch Player</a>
+	<a href=# onclick="start();e('start').style.display='none';iniPlayer(0);return false;" class="btn" >Watch Player</a>
 	</div>
 	
 </div>	
@@ -320,6 +320,12 @@ sw = (sw?0:1)
 setInterval(placeStacle,1000*(8-stage));
 
 </script>
+<div id=controls >
+<div id=control-move >Players</div>
+	<div id=players ></div>
+	<script>showPlayers(e('players'))</script>
+</div>
+	
 	<style>
 	a {
 display:block;
