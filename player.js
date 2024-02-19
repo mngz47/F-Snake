@@ -1,6 +1,6 @@
 var players = ["Listro","Bobby","Matthew"];
 
-var player_speed = [3,6,9];
+var player_speed = [3,6,9]; //the smaller the number greater the speed
 
 async function findFlower(){
    
@@ -8,7 +8,8 @@ async function findFlower(){
  d = "t";
   }else if((e('food').offsetTop-20)<e('head').offsetTop){
  d = "b";
-  }else if((e('food').offsetLeft+20)>e('head').offsetLeft){
+  }
+  if((e('food').offsetLeft+20)>e('head').offsetLeft){
  d = "r";
   }else if((e('food').offsetLeft-20)<e('head').offsetLeft){
  d = "l";
