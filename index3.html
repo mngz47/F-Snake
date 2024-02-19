@@ -18,16 +18,14 @@
 
 	<div style="margin:auto;text-align:center;width:400px;margin-top:300px;padding:20px;" >
 		<p>Avoid the obstacle and make it through the seven stages.</p>
-	<a href=# onclick="start();return false;" class="btn" >Start</a>
-	<a href=# onclick="challenge();return false;" class="btn" >Challenge</a>
+	<a href=# onclick="start();e('start').style.display='none';return false;" class="btn" >Start</a>
+	<a href=# onclick="challenge();e('start').style.display='none';return false;" class="btn" >Challenge</a>
 	</div>
 	
 </div>	
-	
-	
 	<iframe id=four_target src="https://mngz47.github.io/F-Snake/header.html" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 
-<div style="width:600px;margin-left:auto;margin-right:auto;background:gray;opacity:0.6;" >
+<div style="width:600px;margin-left:auto;margin-right:auto;background:rgba(128,128,128,0.6);" >
 <div style="width:600px;" >
 <span style="font-size:3em;">Flower Snake</span>
 <span id="speed"  style="font-size:1.7em;float:right;color:green;margin:7px;" ></span>
