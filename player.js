@@ -1,10 +1,10 @@
 var player = 0;
 
-var players = ["Listro","Bobby","Matthew"];
+var players = ["Ghost","Listro","Bobby","Matthew"];
 
-var player_speed = [2,8,12]; //the smaller the number greater the speed
+var player_speed = [1,3,6,12]; //the smaller the number greater the speed
 
-var precision = [20,30,40]; //detection precision - axis size
+var precision = [10,20,30,40]; //detection precision - axis size
 
 function showPlayers(target){
 for(var a=0;a<precision.length;a++){
