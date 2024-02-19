@@ -17,12 +17,35 @@
 display:block;
 		background:white;
 	}
+
+	#controls {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+
+#control-move {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
 </style>
+	
+<div id=start style="" >
+
+	
+</div>	
+	
+	
 	<iframe id=four_target src="https://mngz47.github.io/F-Snake/header.html" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 
-<div style="width:600px;margin-left:auto;margin-right:auto;background:gray;" >
+<div style="width:600px;margin-left:auto;margin-right:auto;background:gray;opacity:0.6;" >
 <div style="width:600px;" >
-<span style="font-size:3em;">F Snake</span>
+<span style="font-size:3em;">Flower Snake</span>
 <span id="speed"  style="font-size:1.7em;float:right;color:green;margin:7px;" ></span>
 <span id="points"  style="font-size:1.7em;float:right;color:green;margin:7px;" ></span>
 </div>
@@ -38,7 +61,7 @@ display:block;
  
   <table id=controls style="margin-left:auto;margin-right:auto;" >
       <tr><td></td><td></td><td><a href=# onclick="d='t';"  >T</a></td><td></td></tr>
-      <tr><td></td><td><a href=# onclick="d='l';"  >L</a></td><td style="background-color:red;">O</td><td><a href=# onclick="d='r';" >R</a></td></tr>
+      <tr><td></td><td><a href=# onclick="d='l';"  >L</a></td><td id="control-move" style="background-color:red;">O</td><td><a href=# onclick="d='r';" >R</a></td></tr>
       <tr><td></td><td></td><td><a href=# onclick="d='b';"  >D</a></td><td></td></tr>
     </table>
 	<script>
