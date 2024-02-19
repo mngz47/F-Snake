@@ -1,8 +1,8 @@
 var players = ["Listro","Bobby","Matthew"];
 
-var player_speed = [10,6,9]; //the smaller the number greater the speed
+var player_speed = [4,8,12]; //the smaller the number greater the speed
 
-var precision = 40;
+var precision = 30;
 
 async function findFlower(){
    
