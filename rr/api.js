@@ -6,6 +6,14 @@ function isVisible(ele){
 return ele.style.display=='';
 }
 
+function toggle(ele){
+if(isVisible(ele)){
+setVisible(ele,false);
+}else{
+setVisible(ele,true);
+}
+}
+
 function e(id){
 return document.getElementById(id);
 }
