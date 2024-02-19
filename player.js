@@ -46,8 +46,24 @@ async function moveOppositeObstacle(){
    }     
 }
 
+async function moveAroundObstacle(){
+   
+   if(((e('stacle').offsetTop+precision[player])>e('head').offsetTop && (e('stacle').offsetTop-precision[player])<e('head').offsetTop)){ //detect y axis of stacle
+  if(e('stacle').offsetTop>e('head').offsetTop){ 
+ d = "t";
+  }else if(e('stacle').offsetTop<e('head').offsetTop){
+ d = "b";
+  }
+   }else if(((e('stacle').offsetLeft+precision[player])>e('head').offsetLeft && (e('stacle').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect x axis of stacle
+  if(e('stacle').offsetLeft>e('head').offsetLeft){
+ d = "l";
+  }else if(e('stacle').offsetLeft<e('head').offsetLeft){
+ d = "r";
+  }  
+   }     
+}
 function iniPlayer(player){
      this.player = player;
    setInterval(findFlower,500*(player_speed[player]));
-  setInterval(moveOppositeObstacle,200*(player_speed[player])); 
+  setInterval(moveAroundObstacle,200*(player_speed[player])); 
 }
