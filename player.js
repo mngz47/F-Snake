@@ -1,7 +1,9 @@
 var players = ["Listro","Bobby","Matthew"];
 
+var player_speed = [3,6,9];
+
 async function findFlower(){
-    while(!game_over){
+   
   if((e('food').offsetTop+20)>e('head').offsetTop){ 
  d = "t";
   }else if((e('food').offsetTop-20)<e('head').offsetTop){
@@ -11,5 +13,9 @@ async function findFlower(){
   }else if((e('food').offsetLeft-20)<e('head').offsetLeft){
  d = "l";
   }
-    }
+   
+}
+
+function iniPlayer(){
+setInterval(findFlower,1000*(player_speed[0]));
 }
