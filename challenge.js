@@ -1,7 +1,7 @@
 
-function challenge(){
+function showChallenge(){
 
-e('challenge').innerHTML += "<a href=# class=block onclick='purchase(100);return false;' ><img src=trophy.jpg width=100px />5 rounds (R100)</a>"+
+e('challenge').innerHTML = "<a href=# class=block onclick='purchase(100);return false;' ><img src=trophy.jpg width=100px />5 rounds (R100)</a>"+
   "<a href=# class=block onclick='purchase(300);return false;' ><img src=trophy.jpg width=100px />10 rounds (R300)</a>"+
   "<a href=# class=block onclick='purchase(500);return false;' ><img src=trophy.jpg width=100px />15 rounds (R500)</a>";
   
