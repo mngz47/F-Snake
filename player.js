@@ -1,10 +1,10 @@
 var player = 0;
 
-var players = ["Ghost","Listro","Bobby","Matthew"];
+var players = ["Mutant","Ghost","Listro","Bobby","Matthew"];
 
-var player_speed = [1,3,6,12]; //the smaller the number greater the speed
+var player_speed = [0.5,1,3,6,12]; //the smaller the number greater the speed
 
-var precision = [10,20,30,40]; //detection precision - axis size
+var precision = [20,10,20,30,40]; //detection precision - axis size
 
 function showPlayers(target){
 for(var a=0;a<precision.length;a++){
@@ -49,5 +49,5 @@ async function moveOppositeObstacle(){
 function iniPlayer(player){
      this.player = player;
    setInterval(findFlower,500*(player_speed[player]));
-  setInterval(moveOppositeObstacle,300*(player_speed[player])); 
+  setInterval(moveOppositeObstacle,200*(player_speed[player])); 
 }
