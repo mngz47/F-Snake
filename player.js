@@ -1,6 +1,6 @@
 var players = ["Listro","Bobby","Matthew"];
 
-function findFlower(){
+async function findFlower(){
     while(!game_over){
   if((e('food').offsetTop+20)>e('head').offsetTop){ 
  d = "t";
