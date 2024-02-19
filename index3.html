@@ -13,6 +13,9 @@
 <body background=dragon.jpg >
 <script src=rr/api.js ></script>
 <script src=player.js ></script>
+	<script src=challenge.js ></script>
+	<script src=payfast.js ></script>
+	<script src=cookie.js ></script>
 	
 <div id=start style="position: absolute;background-color:rgba(0,0,0,0.7);width:100%;height:100%;" >
 
@@ -21,6 +24,8 @@
 	<a href=# onclick="start();e('start').style.display='none';return false;" class="btn" >Start</a>
 	<a href=# onclick="challenge();e('start').style.display='none';return false;" class="btn" >Challenge</a>
 	<a href=# onclick="start();e('start').style.display='none';iniPlayer(0);return false;" class="btn" >Watch Player</a>
+
+		<div id=challenge ></div>
 	</div>
 	
 </div>	
