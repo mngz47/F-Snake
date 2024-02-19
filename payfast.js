@@ -8,6 +8,16 @@
 <input type=text name=item_name value="Pamel Slots" />
 <input type=text name=email_confirmation value="1" />
 </form>
+
+const urlParams = new URLSearchParams(window.location.search);
+const amount = urlParams.get('vv');
+const payment = urlParams.get('pp');
+if(amount && payment==1){
+e(amount).selected = true;
+play_p();
+}else if(payment==0){
+alert('Payment Cancelled');
+}
 */
 
 var price = 100;
