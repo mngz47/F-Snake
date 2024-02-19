@@ -320,17 +320,17 @@ sw = (sw?0:1)
 setInterval(placeStacle,1000*(8-stage));
 
 </script>
-<div id=controls >
+<div id=controls style="left:0px;top:0px;" >
 <div id=control-move >Players</div>
 	<div id=players ></div>
-	<script>showPlayers(e('players'))</script>
+	<script>showPlayers(e('players'));</script>
 </div>
 	
 	<style>
 	a {
-display:block;
+		display:block;
 		background:white;
-	}
+	  }
 
 	#controls {
   position: absolute;
