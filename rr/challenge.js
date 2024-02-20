@@ -73,7 +73,7 @@ var game_seconds = 0;
 var timerId;
 
 function startChallenge(){
-alert("aa");
+  
 var rounds = getRounds(getCookie("price"));
   
  if(game_index<(rounds*2)){
@@ -115,8 +115,10 @@ var score = "(Your Score: "+p2points+" ;  Time(s) : "+p2seconds+")"+
    
  if(p2seconds<p1seconds && p2points>p1points){
 alert("Success: "+score)
- }
+ }else{
 alert("Failure: "+score);   
+ }
+   deleteAllCookies();
  }
 }
   
