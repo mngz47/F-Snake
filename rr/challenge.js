@@ -50,7 +50,7 @@ if(getCookie("game_index")){
  game_index = getCookie("game_index");
 }else{
   setCookie("game_index", 0, 30);
-  game_index = 0;
+  game_index = 1;
 }
 
     startChallenge();
@@ -83,7 +83,7 @@ var rounds = getRounds(getCookie("price"));
     alert("Active challenge : your turn to play : round "+ Math.round(game_index/2));
     start();
   }else{
-    toggle(e("controls"));
+   // toggle(e("controls"));
     e('start').style.display='none';
     iniPlayer(0);
   }
