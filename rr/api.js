@@ -245,4 +245,3 @@ function iterate_slide(target,images){
     }
     
 }
-
