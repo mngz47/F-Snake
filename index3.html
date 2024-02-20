@@ -15,7 +15,7 @@
 <script src=rr/player.js ></script>
 	<script src=rr/payfast.js ></script>
 	<script src=rr/cookie.js ></script>
-	
+	<script src=rr/challenge.js ></script>
 	
 <div id=start style="position: absolute;background-color:rgba(0,0,0,0.7);width:100%;height:100%;" >
 
@@ -26,12 +26,7 @@
 	<a href=# onclick="start();e('start').style.display='none';iniPlayer(0);return false;" class="btn" >Watch Player</a>
 
 		<div id=challenge style="display:none;" ></div>
-		<script>
-
-			checkChallenge();
-			confirmChallenge();
-			
-		</script>
+		
 	</div>
 	
 </div>	
@@ -356,6 +351,11 @@ setInterval(placeStacle,1000*(8-stage));
   color: #fff;
 }
 </style>
-	<script src=rr/challenge.js ></script>
+	<script>
+
+			checkChallenge();
+			confirmChallenge();
+			
+	</script>
 </body>
 </html>
