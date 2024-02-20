@@ -73,7 +73,7 @@ var game_seconds = 0;
 var timerId;
 
 function startChallenge(){
-
+alert("aa");
 var rounds = getRounds(getCookie("price"));
   
  if(game_index<(rounds*2)){
