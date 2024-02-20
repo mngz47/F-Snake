@@ -67,7 +67,7 @@ gameEnd();
 
 */
 
-var game_index = 0;
+var game_index = 1;
 var game_seconds = 0;
 
 var timerId;
@@ -78,8 +78,8 @@ var rounds = getRounds(getCookie("price"));
   
  if(game_index<(rounds*2)){
 
-  if(game_index%2==0){
-    alert("Active challenge : your turn to play : round "+ Math.round(game_index/2));
+  if(game_index%2==0 && game_index!=1){
+    alert("Active challenge : your turn to play : round "+ (game_index/2));
     e('start').style.display='none';
     start();
   }else{
@@ -136,9 +136,9 @@ game_seconds+=1;
 function gameEnd(){
 
   clearInterval(timerId);
-  var gni = (game_index+1);
-  setCookie("game_index", gni , 30);
-   setCookie("game_seconds_"+gni, game_seconds, 30);
-  setCookie("game_points_"+gni, e('points').innerHTM, 30);
+ 
+  setCookie("game_index", game_index+1 , 30);
+   setCookie("game_seconds_"+game_index, game_seconds, 30);
+  setCookie("game_points_"+game_index, e('points').innerHTML, 30);
   
 }
