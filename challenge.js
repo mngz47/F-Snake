@@ -91,13 +91,34 @@ timerId = setInterval(gameTimer,1000);
 }else{
 //rounds
 
-      
+   var p1seconds = 0;
+   var p1points = 0;
+
+   var p2seconds = 0;
+   var p2points = 0;
    
+   for(var b=0;b<(game_index+1);b++){
+
+ if(b%2==0){
+   p2seconds += (int)getCookie("game_seconds_"+b);
+   p2points += (int)getCookie("game_points_"+b);
+ }else{
+  p1seconds += (int)getCookie("game_seconds_"+b);
+  p1points += (int)getCookie("game_points_"+b);
+  }
+     
+  }  
+
+var score = "(Your Score: "+p2points+" ;  Time(s) : "+p2seconds+")"+
+  "(Machine Score: "+p1points+" ;  Time(s) : "+p1seconds+")";
+   
+ if(p2seconds<p1seconds && p2points>p1points){
+alert("Success: "+score)
+ }
+alert("Failure: "+score);   
  }
 }
   
-
-
 function getRounds(price){
 
   return (price==null?1:(price==100?5:(price=300?10:15)));
