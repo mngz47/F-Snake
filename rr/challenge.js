@@ -78,7 +78,7 @@ var rounds = getRounds(getCookie("price"));
   
  if(game_index<(rounds*2)){
 
-  if(game_index%2==0 && game_index!=1){
+  if(game_index%2==0 && game_index!=1 && game_index!=0){
     alert("Active challenge : your turn to play : round "+ (game_index/2));
     e('start').style.display='none';
     start();
@@ -119,6 +119,7 @@ alert("Success: "+score)
  }else{
 alert("Failure: "+score);   
  }
+   alert(document.cookie);
    deleteAllCookies();
  }
 }
