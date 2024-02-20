@@ -184,8 +184,9 @@ alert('Congradulations Game Complete');
 stage+=1; 
 points=0; //Resets points to prepare for new stage
 
-e('stacle').style.color = (stage==2?'red':(stage==3?'yellow':(color==4?'green':'purple'))); //Changes color of obsatcle for new stage
-setInterval(placeStacle,1000*(8-stage));//Changes speed of obstacle for new stage
+// e('stacle').style.color = (stage==2?'red':(stage==3?'yellow':(stage==4?'green':(stage==5?'orange':(stage==6?'blue':'purple'))))); //Changes color of obsatcle for new stage
+
+	  setInterval(placeStacle,1000*(8-stage));//Changes speed of obstacle for new stage
 
 }else{ // If user is not ready to go to next stage
 location.reload();
