@@ -12,10 +12,10 @@
 </head>
 <body background=dragon.jpg >
 <script src=rr/api.js ></script>
-<script src=player.js ></script>
-	<script src=challenge.js ></script>
-	<script src=payfast.js ></script>
-	<script src=cookie.js ></script>
+<script src=rr/player.js ></script>
+	<script src=rr/challenge.js ></script>
+	<script src=rr/payfast.js ></script>
+	<script src=rr/cookie.js ></script>
 	
 <div id=start style="position: absolute;background-color:rgba(0,0,0,0.7);width:100%;height:100%;" >
 
@@ -327,6 +327,7 @@ setInterval(placeStacle,1000*(8-stage));
 </script>
 <div id=controls style="left:0px;top:0px;" >
 <div id=control-move >Players</div>
+	<a href=# onclick=toggle(e("players")); >toggle</a>
 	<div id=players ></div>
 	<script>showPlayers(e('players'));</script>
 </div>
