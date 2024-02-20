@@ -100,11 +100,11 @@ timerId = setInterval(gameTimer,1000);
    for(var b=0;b<(game_index+1);b++){
 
  if(b%2==0){
-   p2seconds += (int)getCookie("game_seconds_"+b);
-   p2points += (int)getCookie("game_points_"+b);
+   p2seconds += getCookie("game_seconds_"+b);
+   p2points += getCookie("game_points_"+b);
  }else{
-  p1seconds += (int)getCookie("game_seconds_"+b);
-  p1points += (int)getCookie("game_points_"+b);
+  p1seconds += getCookie("game_seconds_"+b);
+  p1points += getCookie("game_points_"+b);
   }
      
   }  
