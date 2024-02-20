@@ -80,7 +80,7 @@ var rounds = getRounds(getCookie("price"));
 
   if(game_index%2==0){
     e('start').style.display='none';
-    alert("Your turn to play")
+    alert("Active challenge : your turn to play.")
     start();
   }else{
     e('start').style.display='none';
