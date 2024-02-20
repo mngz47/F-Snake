@@ -79,12 +79,13 @@ var rounds = getRounds(getCookie("price"));
  if(game_index<(rounds*2)){
 
   if(game_index%2==0){
-    e('start').style.display='none';
     alert("Active challenge : your turn to play : round "+ Math.round(game_index/2));
+    e('start').style.display='none';
     start();
   }else{
    // toggle(e("controls"));
     e('start').style.display='none';
+    start();
     iniPlayer(0);
   }
    
