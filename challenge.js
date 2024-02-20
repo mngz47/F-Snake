@@ -9,6 +9,20 @@ e('challenge').innerHTML =
   
 }
 
+var HOME = "https://mngz47.github.io/F-Snake/index3.html";
+
+function purchase(price){
+this.price = price;
+this.product = "Flower Snake Challenge";
+this.return_url = HOME+"?pp=1";
+this.cancel_url =  HOME+"?pp=0";
+
+setCookie("price", price, 30);
+  
+payfast2();
+
+}
+
 function checkChallenge(){
 const urlParams = new URLSearchParams(window.location.search);
 const payment = urlParams.get('pp');
@@ -26,24 +40,32 @@ alert('Payment Cancelled');
   }
 }
 
+var activeChallenge = false;
+         
 function confirmChallenge(){
-return getCookie("payment")==1;
+  activeChallenge = getCookie("payment")==1;
+
+  if(activeChallenge){
+if(getCookie("game_index")){
+ game_index = getCookie("game_index");
+}else{
+  setCookie("game_index", 0, 30);
+  game_index = 0;
 }
 
+    startChallenge();
+  }
 
-var HOME = "https://mngz47.github.io/F-Snake/index3.html";
-
-function purchase(price){
-this.price = price;
-this.product = "Flower Snake Challenge";
-this.return_url = HOME+"?pp=1";
-this.cancel_url =  HOME+"?pp=0";
-
-setCookie("price", price, 30);
-  
-payfast2();
-
+return activeChallenge;
 }
+
+/*
+
+if(activeChallenge){
+gameEnd();
+}
+
+*/
 
 var game_index = 0;
 var game_seconds = 0;
@@ -55,13 +77,16 @@ function startChallenge(){
 var rounds = getRounds(getCookie("price"));
   
  if(game_index<(rounds*2)){
-  
-if(getCookie("game_index")){
- game_index = getCookie("game_index");
-}else{
-setCookie("game_index", 0, 30);
-}
 
+  if(game_index%2==0){
+    e('start').style.display='none';
+    alert("Your turn to play")
+    start();
+  }else{
+    e('start').style.display='none';
+    iniPlayer(0);
+  }
+   
 timerId = setInterval(gameTimer,1000);
 }else{
 //rounds
@@ -85,10 +110,10 @@ game_seconds+=1;
 
 function gameEnd(){
 
+  clearInterval(timerId);
   var gni = (game_index+1);
   setCookie("game_index", gni , 30);
    setCookie("game_seconds_"+gni, game_seconds, 30);
   setCookie("game_points_"+gni, e('points').innerHTM, 30);
   
-clearInterval(timerId);
 }
