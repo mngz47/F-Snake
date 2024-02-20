@@ -200,6 +200,9 @@ placeFood(); //Places food onto recent randomised position
 if(((e('stacle').offsetTop+20)>e('head').offsetTop && (e('stacle').offsetTop-20)<e('head').offsetTop) && 
 ((e('stacle').offsetLeft+20)>e('head').offsetLeft && (e('stacle').offsetLeft-20)<e('head').offsetLeft)){ // Detects snake head overlap with obstacle
 
+if(activeChallenge){
+gameEnd();
+}
 alert('GAME OVER');
 game_over = true;
 location.reload();
@@ -249,15 +252,6 @@ e('canvas').getElementsByClassName('s_body')[a].remove();
 }
 }
 
-}else if(a>(s_body-s_body*points/15)){
-//detect if head touching snake body
-if(((e('canvas').getElementsByClassName('s_body')[a].offsetTop+5)>e('head').offsetTop && (e('canvas').getElementsByClassName('s_body')[a].offsetTop-5)<e('head').offsetTop) && 
-((e('canvas').getElementsByClassName('s_body')[a].offsetLeft+5)>e('head').offsetLeft && (e('canvas').getElementsByClassName('s_body')[a].offsetLeft-5)<e('head').offsetLeft)){
-alert('GAME OVER');
-game_over = true;
-location.reload();
-break;
-}
 }
 }
 
