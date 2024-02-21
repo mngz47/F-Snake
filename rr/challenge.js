@@ -96,7 +96,6 @@ var game_index_length = rounds*2;
    
 timerId = setInterval(gameTimer,1000);
 }else{
-//rounds
 
    var p1seconds = 0;
    var p1points = 0;
@@ -104,16 +103,17 @@ timerId = setInterval(gameTimer,1000);
    var p2seconds = 0;
    var p2points = 0;
    
-   for(var b=1;b<=game_index;b++){
+   for(var b=1;b<game_index;b++){
 
- if(b%2==0){
+ if(b%2==0){//human turn
    p2seconds += parseInt(getCookie("game_seconds_"+b));
    p2points += parseInt(getCookie("game_points_"+b));
- }else{
+ }else{//machine turn
   p1seconds += parseInt(getCookie("game_seconds_"+b));
   p1points += parseInt(getCookie("game_points_"+b));
   }
-     
+
+     alert(b+" ("+getCookie("game_seconds_"+b)+","+getCookie("game_points_"+b)+")");
   }  
 
 var score = "(Your Score: "+p2points+" ;  Time(s) : "+p2seconds+")"+
