@@ -2,7 +2,7 @@
 function showChallenge(){
 
 e('challenge').innerHTML = 
-  "<a href=# class=block onclick='setCookie(\"price\", null, 30);setCookie(\"payment\", 1, 30);startChallenge();return false;' ><img src=images/trophy.jpg width=50px />1 round (FREE)</a>"+
+  "<a href=# class=block onclick='setCookie(\"price\", null, 30);setCookie(\"payment\", 1, 30);location.reload();return false;' ><img src=images/trophy.jpg width=50px />1 round (FREE)</a>"+
   "<a href=# class=block onclick='purchase(100);return false;' ><img src=images/trophy.jpg width=50px />5 rounds (R100)</a>"+
   "<a href=# class=block onclick='purchase(300);return false;' ><img src=images/trophy.jpg width=50px />10 rounds (R300)</a>"+
   "<a href=# class=block onclick='purchase(500);return false;' ><img src=images/trophy.jpg width=50px />15 rounds (R500)</a>";
