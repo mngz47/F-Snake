@@ -284,7 +284,10 @@ setInterval(placeStacle,1000*(8-stage));
 <div id=control-move >Players</div>
 	<a href=# onclick=toggle(e("players")); >toggle</a>
 	<div id=players ></div>
-	<script>showPlayers(e('players'));</script>
+	<script>
+		showPlayers(e('players'));
+		toggle(e("players"));
+	</script>
 </div>
 	<link rel=stylesheet href=rr/f_snake_style.css />
 	<link rel=stylesheet href=rr/drag_n_drop.css />
