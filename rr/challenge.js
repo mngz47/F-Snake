@@ -49,7 +49,7 @@ function confirmChallenge(){
 if(getCookie("game_index")){
  game_index =  parseInt(getCookie("game_index"));
 }else{
-  setCookie("game_index", 0, 30);
+  setCookie("game_index", 1, 30);
   game_index = 1;
 }
 
@@ -104,7 +104,7 @@ timerId = setInterval(gameTimer,1000);
    var p2seconds = 0;
    var p2points = 0;
    
-   for(var b=0;b<(game_index+1);b++){
+   for(var b=1;b<=game_index;b++){
 
  if(b%2==0){
    p2seconds += parseInt(getCookie("game_seconds_"+b));
