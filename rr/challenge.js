@@ -113,7 +113,7 @@ timerId = setInterval(gameTimer,1000);
   p1points += parseInt(getCookie("game_points_"+b));
   }
 
-     alert(b+" ("+getCookie("game_seconds_"+b)+","+getCookie("game_points_"+b)+")");
+    // alert(b+" ("+getCookie("game_seconds_"+b)+","+getCookie("game_points_"+b)+")");
   }  
 
 var score = "(Your Score: "+p2points+" ;  Time(s) : "+p2seconds+")"+
@@ -124,8 +124,8 @@ alert("Success: "+score)
  }else{
 alert("Failure: "+score);   
  }
-    alert(document.cookie);
-  document.cookie = "";
+  //  alert(document.cookie);
+    deleteAllCookies()
  }
 }
   
