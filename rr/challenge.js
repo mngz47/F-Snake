@@ -67,7 +67,7 @@ gameEnd();
 
 */
 
-var game_index = 0;
+var game_index = 1;
 var game_seconds = 0;
 
 var timerId;
