@@ -124,10 +124,8 @@ alert("Success: "+score)
  }else{
 alert("Failure: "+score);   
  }
-  
-   // alert(document.cookie);
+    alert(document.cookie);
   document.cookie = "";
-   
  }
 }
   
