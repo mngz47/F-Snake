@@ -75,16 +75,18 @@ var timerId;
 function startChallenge(){
   
 var rounds = getRounds(getCookie("price"));
+
+var current_round = Math.Round(game_index/2);
   
  if(game_index<(rounds*2)){
 
   if(game_index%2==0){ // && game_index!=1 && game_index!=0
-    alert("Active challenge : your turn to play : round "+ (game_index/2));
+    alert("Active challenge : your turn to play : round "+ current_round);
     e('start').style.display='none';
     start();
   }else{
    // toggle(e("controls"));
-    alert("Active challenge : machine turn to play : round "+ (game_index/2));
+    alert("Active challenge : machine turn to play : round "+ current_round);
     e('start').style.display='none';
     start();
     iniPlayer(0);
