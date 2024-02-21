@@ -77,8 +77,10 @@ function startChallenge(){
 var rounds = getRounds(getCookie("price"));
 
 var current_round = Math.round(game_index/2);
+
+var game_index_length = rounds*2;
   
- if(game_index<(rounds*2)){
+ if(game_index<=game_index_length){
 
   if(game_index%2==0){ // && game_index!=1 && game_index!=0
     alert("Active challenge : your turn to play : round "+ current_round +" of "+rounds);
@@ -129,7 +131,7 @@ alert("Failure: "+score);
   
 function getRounds(price){
 
-  return (price==null?1:(price==100?5:(price=300?10:15)));
+  return (price==null?1:(price=="100"?5:(price=="300"?10:15)));
   
 }
 
