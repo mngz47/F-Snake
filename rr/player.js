@@ -68,19 +68,35 @@ async function trailObstacle(){
          if((e('food').offsetLeft-e('head').offsetLeft)<0){
          d = "l";
       }else{
-       d = "r";
+       d = "r"; 
       }
    }else if(((e('stacle').offsetLeft+precision[player])>e('head').offsetLeft && (e('stacle').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect y axis of stacle
-       if((e('food').offsetTop-e('head').offsetTop)<0){
+      
+      if((e('food').offsetTop-e('head').offsetTop)<0){
        d = "t";
        }else{
        d = "b";
       }
+      
+   }     
+}
+
+async function trailBiasObstacle(){
+   if(((e('stacle').offsetTop+precision[player])>e('head').offsetTop && (e('stacle').offsetTop-precision[player])<e('head').offsetTop)){ //detect x axis of stacle
+         if((e('food').offsetLeft-e('head').offsetLeft)<0){
+         d = "l";
+      }
+   }else if(((e('stacle').offsetLeft+precision[player])>e('head').offsetLeft && (e('stacle').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect y axis of stacle
+      
+      if((e('food').offsetTop-e('head').offsetTop)<0){
+       d = "t";
+       }
+      
    }     
 }
 
 function iniPlayer(player){
      this.player = player;
    setInterval(findFlower,500*(player_speed[player]));
-  setInterval(trailObstacle,200*(player_speed[player])); 
+  setInterval(trailBiasObstacle,500*(player_speed[player])); 
 }
