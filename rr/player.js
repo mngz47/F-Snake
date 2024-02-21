@@ -64,16 +64,16 @@ async function moveAroundObstacle(){
 }
 
 async function trailObstacle(){
-   if(((e('stacle').offsetTop+precision[player])>e('head').offsetTop && (e('stacle').offsetTop-precision[player])<e('head').offsetTop)){ //detect y axis of stacle
-         if((e('food').offsetLeft-e('head').offsetLeft)>0){
+   if(((e('stacle').offsetTop+precision[player])>e('head').offsetTop && (e('stacle').offsetTop-precision[player])<e('head').offsetTop)){ //detect x axis of stacle
+         if((e('food').offsetLeft-e('head').offsetLeft)<0){
          d = "l";
       }else{
        d = "r";
       }
-   }else if(((e('stacle').offsetLeft+precision[player])>e('head').offsetLeft && (e('stacle').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect x axis of stacle
-    if((e('food').offsetTop-e('head').offsetTop)>0){
-      d = "t";
-      }else{
+   }else if(((e('stacle').offsetLeft+precision[player])>e('head').offsetLeft && (e('stacle').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect y axis of stacle
+       if((e('food').offsetTop-e('head').offsetTop)<0){
+       d = "t";
+       }else{
        d = "b";
       }
    }     
