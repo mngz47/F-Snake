@@ -131,7 +131,7 @@ alert("Failure: "+score);
   
 function getRounds(price){
 
-  return (price==null?1:(price=="100"?5:(price=="300"?10:15)));
+  return (price=="null"?1:(price=="100"?5:(price=="300"?10:15)));
   
 }
 
