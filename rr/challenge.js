@@ -47,7 +47,7 @@ function confirmChallenge(){
 
   if(activeChallenge){
 if(getCookie("game_index")){
- game_index = getCookie("game_index");
+ game_index =  parseInt(getCookie("game_index"));
 }else{
   setCookie("game_index", 0, 30);
   game_index = 1;
@@ -67,7 +67,7 @@ gameEnd();
 
 */
 
-var game_index = 1;
+var game_index = 0;
 var game_seconds = 0;
 
 var timerId;
@@ -78,12 +78,13 @@ var rounds = getRounds(getCookie("price"));
   
  if(game_index<(rounds*2)){
 
-  if(game_index%2==0 && game_index!=1 && game_index!=0){
+  if(game_index%2==0){ // && game_index!=1 && game_index!=0
     alert("Active challenge : your turn to play : round "+ (game_index/2));
     e('start').style.display='none';
     start();
   }else{
    // toggle(e("controls"));
+    alert("Active challenge : machine turn to play : round "+ (game_index/2));
     e('start').style.display='none';
     start();
     iniPlayer(0);
@@ -137,9 +138,11 @@ game_seconds+=1;
 function gameEnd(){
 
   clearInterval(timerId);
- 
-  setCookie("game_index", game_index+1 , 30);
+
+var next_game_index = game_index+1;
+            
+  setCookie("game_index", next_game_index , 30);
    setCookie("game_seconds_"+game_index, game_seconds, 30);
-  setCookie("game_points_"+game_index, e('points').innerHTML, 30);
+  setCookie("game_points_"+game_index,  this.points, 30);
   
 }
