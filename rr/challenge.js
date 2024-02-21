@@ -76,7 +76,7 @@ function startChallenge(){
   
 var rounds = getRounds(getCookie("price"));
 
-var current_round = Math.Round(game_index/2);
+var current_round = Math.round(game_index/2);
   
  if(game_index<(rounds*2)){
 
