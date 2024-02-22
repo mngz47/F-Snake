@@ -17,14 +17,18 @@ async function findFlower(){
    if(((e('food').offsetTop+precision[player])>e('head').offsetTop && (e('food').offsetTop-precision[player])<e('head').offsetTop)){ //detect y axis of food
   if(e('food').offsetLeft>e('head').offsetLeft){
  d = "r";
+     moves+=1;
   }else if(e('food').offsetLeft<e('head').offsetLeft){
  d = "l";
+     moves+=1;
   }  
    }else if(((e('food').offsetLeft+precision[player])>e('head').offsetLeft && (e('food').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect x axis of food
   if(e('food').offsetTop>e('head').offsetTop){ 
  d = "b";
+     moves+=1;
   }else if(e('food').offsetTop<e('head').offsetTop){
  d = "t";
+     moves+=1;
   }
    }     
 }
@@ -74,14 +78,18 @@ async function moveAroundObstacle2(){
           
       if(food_dist<0){
          d = "l";
+         moves+=1;
       }else{
          d = "r"; 
+         moves+=1;
        }
        }else{
          if(food_dist<0){
        d = "t";
+            moves+=1;
        }else{
        d = "b";
+            moves+=1;
       } 
        }
       
@@ -95,14 +103,18 @@ async function moveAroundObstacle2(){
       if(((e('food').offsetLeft+precision[player])>e('head').offsetLeft && (e('food').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect y axis of stacle
       if(food_dist<0){
        d = "t";
+         moves+=1;
        }else{
        d = "b";
+         moves+=1;
       } 
       }else{
       if(food_dist<0){
          d = "l";
+         moves+=1;
       }else{
          d = "r"; 
+         moves+=1;
       }
       }
    }     
