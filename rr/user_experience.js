@@ -26,9 +26,16 @@ e('canvas').style.opacity = "1";
  e("canvas").innerHTML = canvas;
   e('canvas').style.background = "white";
   
-  e('stacle').style.color = (stage==2?'red':(stage==3?'yellow':(stage==4?'green':(stage==5?'orange':(stage==6?'blue':'purple'))))); //Changes color of obsatcle for new stage
-
+   prepareNextStage();
   
+}
+
+function prepareNextStage(){
+stage+=1; 
+points=0; //Resets points to prepare for new stage
+
+e('stacle').style.color = (stage==2?'red':(stage==3?'yellow':(stage==4?'green':(stage==5?'orange':(stage==6?'blue':'purple'))))); //Changes color of obsatcle for new stage
+setInterval(placeStacle,1000*(8-stage));//Changes speed of obstacle for new stage
 }
 
 function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2stage,p2seconds,p2moves,winner){
