@@ -63,6 +63,23 @@ async function moveAroundObstacle(){
    }     
 }
 
+async function moveAroundObstacle2(){
+   
+   if(((e('stacle').offsetTop+precision[player])>e('head').offsetTop && (e('stacle').offsetTop-precision[player])<e('head').offsetTop)){ //detect y axis of stacle
+  if(e('stacle').offsetTop>e('head').offsetTop){ 
+ d = "l";
+  }else if(e('stacle').offsetTop<e('head').offsetTop){
+ d = "r";
+  }
+   }else if(((e('stacle').offsetLeft+precision[player])>e('head').offsetLeft && (e('stacle').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect x axis of stacle
+  if(e('stacle').offsetLeft>e('head').offsetLeft){
+ d = "t";
+  }else if(e('stacle').offsetLeft<e('head').offsetLeft){
+ d = "b";
+  }  
+   }     
+}
+
 async function trailObstacle(){
    if(((e('stacle').offsetTop+precision[player])>e('head').offsetTop && (e('stacle').offsetTop-precision[player])<e('head').offsetTop)){ //detect x axis of stacle
          if((e('food').offsetLeft-e('head').offsetLeft)<0){
@@ -107,6 +124,6 @@ function iniPlayer(player){
      this.player = player;
    setInterval(findFlower,500*(player_speed[player]));
    setInterval(trailBiasObstacle,500*(player_speed[player]));
-   setInterval(moveAroundObstacle,250*(player_speed[player])); 
+   setInterval(moveAroundObstacle2,250*(player_speed[player])); 
 
 }
