@@ -15,7 +15,7 @@ e('canvas').style.opacity = "0.4";
   
 }
 
-function show_challenge_winner(p1points,p1stage,p1speed,p1moves,p2points,p2stage,p2speed,p2moves,winner){
+function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2stage,p2seconds,p2moves,winner){
 
  e('canvas').background = "images/celebrate.gif";
   e("canvas").innerHTML =
@@ -25,20 +25,22 @@ function show_challenge_winner(p1points,p1stage,p1speed,p1moves,p2points,p2stage
     
     "<img src='images/trophy.jpg' width=100% />"+
     
-    "<span>Points "+p1points+"</span>"+
-     "<span>Stage "+p1stage+"</span>"+
-     "<span>Speed "+p1speed+"</span>"+
-     "<span>Moves "+p1moves+"</span>"+
+    "<span style="display:block;" >Points :"+p1points+"</span>"+
+     "<span style="display:block;" >Stage :"+p1stage+"</span>"+
+     "<span style="display:block;"  >Time :"+p1seconds+"</span>"+
+     "<span  style="display:block;"  >Speed :"+Math.round(p1stage/p1seconds)+"</span>"+
+     "<span  style="display:block;"  >Moves :"+p1moves+"</span>"+
     "</div>"+
     
     "<div class="col-sm-6 block" >"+
  
     "<img src='images/trophy.jpg' width=100% />"+
     
-    "<span>Points "+p1points+"</span>"+
-     "<span>Stage "+p1stage+"</span>"+
-     "<span>Speed "+p1speed+"</span>"+
-     "<span>Moves "+p1moves+"</span>"+
+     "<span style="display:block;" >Points :"+p2points+"</span>"+
+     "<span style="display:block;" >Stage :"+p2stage+"</span>"+
+     "<span style="display:block;"  >Time :"+p2seconds+"</span>"+
+     "<span  style="display:block;"  >Speed :"+Math.round(p2stage/p2seconds)+"</span>"+
+     "<span  style="display:block;"  >Moves :"+p2moves+"</span>"+
     "</div>"+
     
     "</div>"+
