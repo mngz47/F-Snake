@@ -72,7 +72,7 @@ async function moveAroundObstacle2(){
          e('log').innerHTML += "<span style='color:white;display:block;' >x detect "+food_dist+ "</span>";
        if(((e('food').offsetTop+precision[player])>e('head').offsetTop && (e('food').offsetTop-precision[player])<e('head').offsetTop)){ //detect x axis of stacle
           
-      if(food_dist>0){
+      if(food_dist<0){
          d = "l";
       }else{
          d = "r"; 
@@ -93,7 +93,7 @@ async function moveAroundObstacle2(){
       e('log').innerHTML += "<span style='color:white;display:block;' >y detect "+food_dist+ "</span>";
       
       if(((e('food').offsetLeft+precision[player])>e('head').offsetLeft && (e('food').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect y axis of stacle
-      if(food_dist>0){
+      if(food_dist<0){
        d = "t";
        }else{
        d = "b";
