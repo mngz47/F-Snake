@@ -150,12 +150,6 @@ if(points>=14){ // Detects if user has gained enough points to move to next stag
     // Alert and Confirm currently don't work on facebook games
 }else if(transport(stage+1)){ // Confirms if user is ready for next stage
 
-stage+=1; 
-points=0; //Resets points to prepare for new stage
-
-e('stacle').style.color = (stage==2?'red':(stage==3?'yellow':(stage==4?'green':(stage==5?'orange':(stage==6?'blue':'purple'))))); //Changes color of obsatcle for new stage
-
-	  setInterval(placeStacle,1000*(8-stage));//Changes speed of obstacle for new stage
 
 }else{ // If user is not ready to go to next stage
 location.reload();
