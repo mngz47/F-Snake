@@ -57,7 +57,7 @@ function show_score(p1points,p1stage,p1seconds,p1moves,winner){
  e('canvas').background = "images/celebrate.gif";
   e("canvas").innerHTML =
     "<div class=row style='text-align:center;font-size:2em;display:block;margin-top:150px;' >"+
-    "<div  class="col-sm-6 block" >"+
+    "<div  class='col-sm-6 block' >"+
     "<img src='images/trophy.jpg' width=100% />"+
      "<span style='display:block;' >Points :"+p1points+"</span>"+
      "<span style='display:block;' >Stage :"+p1stage+"</span>"+
@@ -65,7 +65,7 @@ function show_score(p1points,p1stage,p1seconds,p1moves,winner){
      "<span  style='display:block;'  >Speed :"+Math.round(p1stage/p1seconds)+"</span>"+
      "<span  style='display:block;'  >Moves :"+p1moves+"</span>"+
     "</div>"+
-    "<div class="col-sm-6 block" >"+
+    "<div class='col-sm-6 block' >"+
     "</div>"+
     
     "</div>"+
