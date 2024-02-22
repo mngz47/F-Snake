@@ -22,7 +22,7 @@ setTimeout(hideBehindCanvas, 2000);
 function hideBehindCanvas(){
 
  
-e('canvas').style.opacity = "0";
+e('canvas').style.opacity = "1";
  e("canvas").innerHTML = canvas;
   e('canvas').style.background = "white";
   
