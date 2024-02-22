@@ -1,4 +1,4 @@
-
+ 
 function transport(stage){
 
   e('canvas').background = "images/wormhole.gif";
@@ -21,7 +21,7 @@ function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2sta
   e("canvas").innerHTML =
     "<div class=row style='text-align:center;font-size:2em;display:block;margin-top:150px;' >"+
    
-    "<div  class="col-sm-6 block" >"+
+    "<div  class='col-sm-6 block' >"+
     
     "<img src='images/trophy.jpg' width=100% />"+
     
@@ -32,7 +32,7 @@ function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2sta
      "<span  style="display:block;"  >Moves :"+p1moves+"</span>"+
     "</div>"+
     
-    "<div class="col-sm-6 block" >"+
+    "<div class='col-sm-6 block' >"+
  
     "<img src='images/trophy.jpg' width=100% />"+
     
