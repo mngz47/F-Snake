@@ -68,22 +68,40 @@ async function moveAroundObstacle2(){
 
       var food_dist = (e('food').offsetTop-e('head').offsetTop);
         alert("x detect "+food_dist);
- if(food_dist<0){
+
+       if(((e('food').offsetTop+precision[player])>e('head').offsetTop && (e('food').offsetTop-precision[player])<e('head').offsetTop)){ //detect x axis of stacle
+          
+      if(food_dist>0){
+         d = "l";
+      }else{
+         d = "r"; 
+       }
+       }else{
+         if(food_dist<0){
        d = "t";
        }else{
        d = "b";
       } 
+       }
+      
    }else if(((e('stacle').offsetLeft+precision[player])>e('head').offsetLeft && (e('stacle').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect y axis of stacle
       
       var food_dist = (e('food').offsetLeft-e('head').offsetLeft);
       alert("y detect "+food_dist);
+      
+      if(((e('food').offsetLeft+precision[player])>e('head').offsetLeft && (e('food').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect y axis of stacle
+      if(food_dist>0){
+       d = "t";
+       }else{
+       d = "b";
+      } 
+      }else{
       if(food_dist<0){
          d = "l";
       }else{
          d = "r"; 
       }
-
-      
+      }
    }     
 }
 
