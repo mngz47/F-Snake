@@ -1,8 +1,11 @@
- 
+
+var canvas = "";
+
 function transport(stage){
 
-  e('canvas').background = "images/wormhole.gif";
-  e("canvas").innerHTML = "<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage 2"+stage+"...</span>";
+  e('canvas').style.backgroundImage = "images/wormhole.gif";
+ canvas = e("canvas").innerHTML;
+  e("canvas").innerHTML = "<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>";
 
 setTimeout(seeBehindCanvas, 2000);
 
@@ -12,6 +15,16 @@ setTimeout(seeBehindCanvas, 2000);
 function seeBehindCanvas(){
 
 e('canvas').style.opacity = "0.4";
+setTimeout(hideBehindCanvas, 2000);
+ 
+}
+
+function hideBehindCanvas(){
+
+ 
+e('canvas').style.opacity = "0";
+ e("canvas").innerHTML = canvas;
+  e('canvas').style.background = "white";
   
 }
 
