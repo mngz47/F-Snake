@@ -66,16 +66,18 @@ async function moveAroundObstacle(){
 async function moveAroundObstacle2(){
    
    if(((e('stacle').offsetTop+precision[player])>e('head').offsetTop && (e('stacle').offsetTop-precision[player])<e('head').offsetTop)){ //detect y axis of stacle
-  if(e('stacle').offsetTop>e('head').offsetTop){ 
- d = "l";
-  }else if(e('stacle').offsetTop<e('head').offsetTop){
+  alert("y detect");
+      if(e('stacle').offsetTop>e('head').offsetTop){   
  d = "r";
+  }else if(e('stacle').offsetTop<e('head').offsetTop){
+ d = "l";
   }
    }else if(((e('stacle').offsetLeft+precision[player])>e('head').offsetLeft && (e('stacle').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect x axis of stacle
-  if(e('stacle').offsetLeft>e('head').offsetLeft){
- d = "t";
-  }else if(e('stacle').offsetLeft<e('head').offsetLeft){
+   alert("x detect");
+if(e('stacle').offsetLeft>e('head').offsetLeft){
  d = "b";
+  }else if(e('stacle').offsetLeft<e('head').offsetLeft){
+ d = "t";
   }  
    }     
 }
