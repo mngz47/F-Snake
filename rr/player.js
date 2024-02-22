@@ -67,8 +67,9 @@ async function moveAroundObstacle2(){
    if(((e('stacle').offsetTop+precision[player])>e('head').offsetTop && (e('stacle').offsetTop-precision[player])<e('head').offsetTop)){ //detect x axis of stacle
 
       var food_dist = (e('food').offsetTop-e('head').offsetTop);
-        alert("x detect "+food_dist);
+        //alert("x detect "+food_dist);
 
+         e('log').innerHTML += "<span style='color:white;display:block;' >x detect "+food_dist+ "</span>";
        if(((e('food').offsetTop+precision[player])>e('head').offsetTop && (e('food').offsetTop-precision[player])<e('head').offsetTop)){ //detect x axis of stacle
           
       if(food_dist>0){
@@ -87,7 +88,9 @@ async function moveAroundObstacle2(){
    }else if(((e('stacle').offsetLeft+precision[player])>e('head').offsetLeft && (e('stacle').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect y axis of stacle
       
       var food_dist = (e('food').offsetLeft-e('head').offsetLeft);
-      alert("y detect "+food_dist);
+     // alert("y detect "+food_dist);
+      
+      e('log').innerHTML += "<span style='color:white;display:block;' >y detect "+food_dist+ "</span>";
       
       if(((e('food').offsetLeft+precision[player])>e('head').offsetLeft && (e('food').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect y axis of stacle
       if(food_dist>0){
