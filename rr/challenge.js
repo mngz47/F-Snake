@@ -99,31 +99,37 @@ timerId = setInterval(gameTimer,1000);
 
    var p1seconds = 0;
    var p1points = 0;
+   var p1moves = 0;
 
    var p2seconds = 0;
    var p2points = 0;
+   var p2moves = 0;
    
    for(var b=1;b<game_index;b++){
 
  if(b%2==0){//human turn
    p2seconds += parseInt(getCookie("game_seconds_"+b));
    p2points += parseInt(getCookie("game_points_"+b));
+   p2moves += parseInt(getCookie("game_moves_"+b));
+   
  }else{//machine turn
   p1seconds += parseInt(getCookie("game_seconds_"+b));
   p1points += parseInt(getCookie("game_points_"+b));
+  p1moves += parseInt(getCookie("game_moves_"+b));
+   
   }
 
     // alert(b+" ("+getCookie("game_seconds_"+b)+","+getCookie("game_points_"+b)+")");
   }  
 
-var score = "(Your Score: "+p2points+" ;  Time(s) : "+p2seconds+")"+
-  "(Machine Score: "+p1points+" ;  Time(s) : "+p1seconds+")";
-   
- if(p2seconds<p1seconds && p2points>p1points){
-alert("Success: "+score)
- }else{
-alert("Failure: "+score);   
+ if(p2moves<p1moves && p2points>p1points){
+p2points+=10;
+ }else if(p2moves>p1moves && p2points<p1points){
+  p1points+=10;
  }
+
+   show_challenge_winner(p1points,Math.round(p1points/14),p1seconds,p1moves,p2points,Math.round(p1points/14),p1seconds,p2moves,(p2points>p1points?"You":"Machine"));
+
   //  alert(document.cookie);
     deleteAllCookies()
  }
@@ -147,6 +153,7 @@ var next_game_index = game_index+1;
             
   setCookie("game_index", next_game_index , 30);
    setCookie("game_seconds_"+game_index, game_seconds, 30);
+  setCookie("game_moves_"+game_index, this.moves, 30);
   setCookie("game_points_"+game_index,  this.points, 30);
   
 }
