@@ -166,10 +166,10 @@ e('log').innerHTML += "<span style='color:white;display:block;' >y detect f("+fo
       
          
 if(stacle_dist<0){
-         d = "t";
+         d = "b";
          moves+=1;
 }else if(food_dist<0){
-         d = "b";
+         d = "t";
          moves+=1;
 }             
       }else{
