@@ -164,6 +164,6 @@ function iniPlayer(player){
      this.player = player;
    setInterval(findFlower,500*(player_speed[player]));
   // setInterval(trailBiasObstacle,500*(player_speed[player]));
-   setInterval(moveAroundObstacle2,500*(player_speed[player])); 
+   setInterval(moveAroundObstacle,500*(player_speed[player])); 
 
 }
