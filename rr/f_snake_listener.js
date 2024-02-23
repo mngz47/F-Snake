@@ -1,4 +1,4 @@
-function listen(){
+function f_listen(){
 
 document.body.onkeydown = function(e){ // Detect keys pressed on keyboard to change the direction of movement of the snake head F
 
