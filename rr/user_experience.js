@@ -3,7 +3,7 @@ var canvas = "";
 
 function transport(stage){
 
-  overLay( e("canvas").style,"<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>");
+  overLay( e("canvas"),"<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>");
 setTimeout(seeBehindCanvas, 2000);
 
   return true;
@@ -12,7 +12,7 @@ setTimeout(seeBehindCanvas, 2000);
 
 function overLay(target,content){
 
-   document.body.innerHTML += "<div id=overlay style='position:absolute;top:"+target.offsetTop+"px;left:"+target.offsetLeft+"px;width:"+target.width+"px;height:"+target.height+"px;' >"+content+"</div>";
+   document.body.innerHTML += "<div id=overlay style='position:absolute;top:"+target.style.offsetTop+";left:"+target.style.offsetLeft+";width:"+target.style.width+";height:"+target.style.height+";' >"+content+"</div>";
    e('overlay').style.backgroundImage = "url('images/wormhole.gif')";
   
 }
