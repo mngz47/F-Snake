@@ -3,18 +3,24 @@ var canvas = "";
 
 function transport(stage){
 
-  e('canvas').style.backgroundImage = "images/wormhole.gif";
- canvas = e("canvas").innerHTML;
-  e("canvas").innerHTML = "<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>";
-
+  overLay( e("canvas").style,"<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>");
 setTimeout(seeBehindCanvas, 2000);
 
   return true;
  }
 
+
+function overLay(target,content){
+
+   document.body.innerHTML += "<div id=overlay style='position:absolute;top:"+target.offsetTop+";left:"+target.offsetLeft+";width:"+target.width+";height:"+target.height+";' >"+content+"</div>";
+   e('overlay').style.backgroundImage = "url('images/wormhole.gif')";
+  
+}
+
 function seeBehindCanvas(){
 
 e('canvas').style.opacity = "0.4";
+  e('overlay').style.opacity = "0.4";
 setTimeout(hideBehindCanvas, 2000);
  
 }
@@ -23,9 +29,7 @@ function hideBehindCanvas(){
 
  
 e('canvas').style.opacity = "1";
- e("canvas").innerHTML = canvas;
-  e('canvas').style.background = "white";
-  
+    e('overlay').style.opacity = "1";
    prepareNextStage();
   
 }
