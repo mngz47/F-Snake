@@ -12,7 +12,7 @@ setTimeout(seeBehindCanvas, 2000);
 
 function overLay(target,content){
 
-   document.body.innerHTML += "<div id=overlay style='position:absolute;top:"+target.offsetTop+";left:"+target.offsetLeft+";width:"+target.width+";height:"+target.height+";' >"+content+"</div>";
+   document.body.innerHTML += "<div id=overlay style='position:absolute;top:"+target.offsetTop+"px;left:"+target.offsetLeft+"px;width:"+target.width+"px;height:"+target.height+"px;' >"+content+"</div>";
    e('overlay').style.backgroundImage = "url('images/wormhole.gif')";
   
 }
@@ -30,6 +30,7 @@ function hideBehindCanvas(){
  
 e('canvas').style.opacity = "1";
     e('overlay').style.opacity = "1";
+  toggle( e('overlay'));
    prepareNextStage();
   
 }
