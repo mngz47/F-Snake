@@ -230,5 +230,5 @@ function iniPlayer(player){
    setInterval(findFlower,500*(player_speed[player]));
   // setInterval(trailBiasObstacle,500*(player_speed[player]));
   // setInterval(moveAroundObstacle,500*(player_speed[player])); 
-   setInterval(moveAroundObstacle3,300*(player_speed[player])); 
+   setInterval(moveAroundObstacle2,300*(player_speed[player])); 
 }
