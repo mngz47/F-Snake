@@ -14,7 +14,8 @@ function overLay(target,content){
 
    document.body.innerHTML += "<div id=overlay style='position: absolute;left:0px;top:0px;width:100%;height:100%;' >"+content+"</div>";
    e('overlay').style.backgroundImage = "url('images/wormhole.gif')";
-  
+   e('overlay').style.backgroundSize = "100% 100%";
+   e('overlay').style.backgroundRepeat = "no-repeat";
 }
 
 function seeBehindCanvas(){
