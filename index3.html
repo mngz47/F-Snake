@@ -18,6 +18,11 @@
 	<script src=rr/challenge.js ></script>
 	<script src=rr/drag_n_drop.js ></script>
 	<script src=rr/user_experience.js ></script>
+	<script src=rr/f_snake_listener.js ></script>
+	<script src=rr/f_snake_navigation.js ></script>
+	<script src=rr/f_snake_detection.js ></script>
+	<script src=rr/f_snake_features.js ></script>
+	
 	
 <div id=start style="position: absolute;background-color:rgba(0,0,0,0.7);width:100%;height:100%;" >
 
@@ -74,22 +79,7 @@ var stage = 1;
 	
 	var moves = 0;
 
-document.body.onkeydown = function(e){ // Detect keys pressed on keyboard to change the direction of movement of the snake head F
-
-if(e.key=="a" | e.key=="ArrowLeft"){
-d="l";
-	moves+=1;
-}else if(e.key=="d" | e.key=="ArrowRight"){
-d="r";
-	moves+=1;
-}else if(e.key=="w" | e.key=="ArrowUp"){
-d="t";
-	moves+=1;
-}else if(e.key=="s" | e.key=="ArrowDown"){
-d="b";
-	moves+=1;
-}
-};
+f_listen();
 
 var speed = 60;
 
@@ -99,81 +89,9 @@ async function start(){
 
 while(!game_over){ //continuosly move the snake head so long as the game is not over
 
-if(d=="r"){ //Moves snake head to the right
+f_navigate();
 
-  if(e('head').offsetLeft>=(e('canvas').offsetWidth+e('canvas').offsetLeft-20)){ // Detect the bound of the canvas towards the right
-    e('head').style.left= e('canvas').offsetLeft+"px"; // move the snake head to the beginning of the canvas on the left
-  }else{ // If snake head hasn't reached canvas bound toward the right 
-    e('head').style.left= (e('head').offsetLeft+3)+"px"; // Move the snake by 3px to the right
-  }
-  
-}else if(d=="l"){ //Moves the snake head to the left 
-
-  if(e('head').offsetLeft<=e('canvas').offsetLeft){ // Detect the bound of the canvas towards the left
-    e('head').style.left = (e('canvas').offsetWidth+e('canvas').offsetLeft)+"px"; // move the snake head to the end of the canvas on the right
-  }else{ // If snake head hasn't reached canvas bound toward the left 
-    e('head').style.left = (e('head').offsetLeft-3)+"px"; // Move the snake by -3px to the left 
-  }
-  
-  
-}else if(d=="t"){ //Moves the snake head to the top
-  
-  if(e('head').offsetTop<=e('canvas').offsetTop){
-    e('head').style.top = (e('canvas').offsetHeight+e('canvas').offsetTop-20)+"px";
-  }else{
-    e('head').style.top = (e('head').offsetTop-3)+"px";
-  }
-  
-}else{ //Moves the snake head to the bottom
-  
-  if(e('head').offsetTop>=(e('canvas').offsetHeight+e('canvas').offsetTop-20)){
-    e('head').style.top = e('canvas').offsetTop+"px";
-  }else{
-    e('head').style.top = (e('head').offsetTop+3)+"px";
-  }
-  
-}
-
-
-if(((e('food').offsetTop+20)>e('head').offsetTop && (e('food').offsetTop-20)<e('head').offsetTop) && 
-((e('food').offsetLeft+20)>e('head').offsetLeft && (e('food').offsetLeft-20)<e('head').offsetLeft)){ //Detects if the head of the snake overlaps with food
-
-points+=1; // Gives the player a point for getting the food
-
-if(points>=14){ // Detects if user has gained enough points to move to next stage
-
-  if(stage==7){ // Detects completion of game if user finishes stage 7
-//alert('Congradulations Game Complete');
-
-	  show_score(points,stage,game_seconds,moves,"Congradulations Game Complete");
-	  
-    // Alert and Confirm currently don't work on facebook games
-}else if(transport(stage+1)){ // Confirms if user is ready for next stage
-
-
-}else{ // If user is not ready to go to next stage
-location.reload();
-}
-  
-}
-
-e('points').innerHTML = 'POINTS('+points+')'; //Shows recent points to user
-placeFood(); //Places food onto recent randomised position
-
-}
-
-if(((e('stacle').offsetTop+20)>e('head').offsetTop && (e('stacle').offsetTop-20)<e('head').offsetTop) && 
-((e('stacle').offsetLeft+20)>e('head').offsetLeft && (e('stacle').offsetLeft-20)<e('head').offsetLeft)){ // Detects snake head overlap with obstacle
-
-if(activeChallenge){
-gameEnd();
-}
-	
-alert('GAME OVER');
-game_over = true;
-location.reload();
-
-}
+f_detect();
 
 show_body(e('head').offsetLeft,e('head').offsetTop); //renders the body of the snake
 
@@ -197,89 +115,6 @@ setInterval(function(){
 
 */
 
-var body_left = [];
-var body_top = [];
-
-function show_body(x,y){
-
-var s_body  = e('canvas').getElementsByClassName('s_body').length;
-
-for(var a=0;a<(s_body-(15*points));a++){
-
-if(a<(s_body-s_body*points/15)){
-
-//shed skin - hide body trail
-
-if(mode=="hard"){
-e('canvas').getElementsByClassName('s_body')[a].style.display = 'none'; 
-}else if(mode=="easy"){
-if(a<(15*points)){
-e('canvas').getElementsByClassName('s_body')[a].remove(); 
-}
-}
-
-}
-}
-
-for(var a=0;a<(points-1);a++){
-
-body_left[(a==0?0:a+1)] = (a==0?x:body_left[a]);
-body_top[(a==0?0:a+1)] = (a==0?y:body_top[a]);
-
-var s_b = ne('span');
-s_b.innerHTML = 'O';
-s_b.style.fontSize = '2.2em';
-
-var color = Math.round(4*Math.random());
-
-s_b.style.color = (color==1?'red':(color==2?'yellow':(color==3?'green':'purple')));
-
-s_b.className = 's_body';
-
-s_b.style.position = 'absolute';
-s_b.style.left = body_left[a]+'px';
-s_b.style.top = body_top[a]+'px';
-
-e('canvas').appendChild(s_b);
-
-}
-}
-
-function placeFood(){
-
-var tt = Math.random()*(e('canvas').offsetHeight+e('canvas').offsetTop-20);
-while(tt<e('canvas').offsetTop){
-tt =  Math.random()*(e('canvas').offsetHeight+e('canvas').offsetTop-20);
-}
-var ll = Math.random()*(e('canvas').offsetWidth+e('canvas').offsetLeft-20);
-while(ll<e('canvas').offsetLeft){
-ll =  Math.random()*(e('canvas').offsetWidth+e('canvas').offsetLeft-20);
-}
-
-e('food').style.top = tt+"px";
-e('food').style.left = ll+"px";
-}
-
-placeFood();
-
-var sw = 1;
-
-function placeStacle(){
-
-var tt = Math.random()*(e('canvas').offsetHeight+e('canvas').offsetTop-20);
-while(tt<e('canvas').offsetTop){
-tt =  Math.random()*(e('canvas').offsetHeight+e('canvas').offsetTop-20);
-}
-var ll = Math.random()*(e('canvas').offsetWidth+e('canvas').offsetLeft-20);
-while(ll<e('canvas').offsetLeft){
-ll =  Math.random()*(e('canvas').offsetWidth+e('canvas').offsetLeft-20);
-}
-
-e('stacle').style.top = (sw?e('food').style.top:tt+"px");
-e('stacle').style.left = (sw?ll+"px":e('food').style.left);
-
-sw = (sw?0:1)
-}
 
 //1000*(8-stage)
 
