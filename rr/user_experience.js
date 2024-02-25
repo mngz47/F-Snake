@@ -3,15 +3,24 @@ var canvas = "";
 
 function transport(stage){
 
-  overLay( e("canvas"),"<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>"
-         +"<img src=images/wormhole.gif width=400px />");
+  overLay("<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>"
+         +"<img src=images/wormhole.gif width=100% />");
+  
   setTimeout(seeBehindCanvas, 2000);
 
   return true;
  }
 
 
-function overLay(target,content){
+function game_over(){
+overLay("<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Game Over</span>");
+  setTimeout(seeBehindCanvas, 2000);
+    setTimeout(location.reload, 5000);
+  //location.reload();
+}
+
+
+function overLay(content){
 
    document.body.innerHTML += "<div id=overlay style='position: absolute;background-color:rgba(0,0,0,0.7);left:0px;top:0px;width:100%;height:100%;' >"+content+"</div>";
 }
@@ -29,7 +38,6 @@ function hideBehindCanvas(){
  
 e('canvas').style.opacity = "1";
     e('overlay').style.opacity = "1";
-  alert("next stage ready");
   toggle( e('overlay'));
    prepareNextStage();
   
