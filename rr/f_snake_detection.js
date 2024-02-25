@@ -33,10 +33,10 @@ if(((e('stacle').offsetTop+20)>e('head').offsetTop && (e('stacle').offsetTop-20)
 if(activeChallenge){
 gameEnd();
 }
-	
-alert('GAME OVER');
+
+game_over();
 game_over = true;
-location.reload();
+
 
 }
 
