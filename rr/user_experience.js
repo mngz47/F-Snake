@@ -3,8 +3,9 @@ var canvas = "";
 
 function transport(stage){
 
-  overLay( e("canvas"),"<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>");
-setTimeout(seeBehindCanvas, 2000);
+  overLay( e("canvas"),"<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>"
+         +"<img src=images/wormhole.gif width=400px />");
+  setTimeout(seeBehindCanvas, 2000);
 
   return true;
  }
@@ -12,15 +13,12 @@ setTimeout(seeBehindCanvas, 2000);
 
 function overLay(target,content){
 
-   document.body.innerHTML += "<div id=overlay style='position: absolute;left:0px;top:0px;width:100%;height:100%;' >"+content+"</div>";
-   e('overlay').style.backgroundImage = "url('images/wormhole.gif')";
-   e('overlay').style.backgroundSize = "100% 100%";
-   e('overlay').style.backgroundRepeat = "no-repeat";
+   document.body.innerHTML += "<div id=overlay style='position: absolute;background-color:rgba(0,0,0,0.7);left:0px;top:0px;width:100%;height:100%;' >"+content+"</div>";
 }
 
 function seeBehindCanvas(){
 
-e('canvas').style.opacity = "0.4";
+    e('canvas').style.opacity = "0.4";
   e('overlay').style.opacity = "0.4";
 setTimeout(hideBehindCanvas, 2000);
  
@@ -31,6 +29,7 @@ function hideBehindCanvas(){
  
 e('canvas').style.opacity = "1";
     e('overlay').style.opacity = "1";
+  alert("next stage ready");
   toggle( e('overlay'));
    prepareNextStage();
   
