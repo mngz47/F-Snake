@@ -86,9 +86,9 @@ function show_score(p1points,p1stage,p1seconds,p1moves,winner){
 
  //setTimeout(seeBehindCanvas, 10000);
   
-return "<div class='row' style='font-size:2em;margin-top:150px;' >"+
+return "<div class='row' style='font-size:2em;margin-top:150px;font-color:white;' >"+
     "<div  class='col-sm-6' >"+
-    "<img src='images/trophy.jpg' width=100% />"+
+    "<img src='images/trophy.jpg' width=100px />"+
     "<h4>"+winner+"</h4>"+
   "</div>"+
     "<div class='col-sm-6' >"+
