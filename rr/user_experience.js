@@ -84,9 +84,9 @@ function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2sta
 
 function show_score(p1points,p1stage,p1seconds,p1moves,winner){
 
- setTimeout(seeBehindCanvas, 10000);
+ //setTimeout(seeBehindCanvas, 10000);
   
-return "<div class='row block' style='font-size:2em;margin-top:150px;' >"+
+return "<div class='row' style='font-size:2em;margin-top:150px;' >"+
     "<div  class='col-sm-6' >"+
     "<img src='images/trophy.jpg' width=100% />"+
     "<h4>"+winner+"</h4>"+
