@@ -14,8 +14,8 @@ function transport(stage){
 
 function gameOver(){
 overLay(show_score(points,stage,game_seconds,moves,"<h2>Game Over</h2><a href=# onclick='location.reload();return false;' >Reload</a>"));
-  setTimeout(seeBehindCanvas, 2000);
-   
+ 
+  // setTimeout(seeBehindCanvas, 2000); 
   //location.reload();
 }
 
