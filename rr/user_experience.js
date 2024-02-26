@@ -47,13 +47,12 @@ e('canvas').style.opacity = "1";
 
 function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2stage,p2seconds,p2moves,winner){
 
- e('canvas').background = "images/celebrate.gif";
-  e("canvas").innerHTML =
-    "<div class=row style='text-align:center;font-size:2em;display:block;margin-top:150px;' >"+
+return 
+    "<div class=row style='background-image:url(\"images/celebrate.gif\");text-align:center;font-size:2em;display:block;margin-top:150px;' >"+
    
     "<div  class='col-sm-6 block' >"+
     
-    "<img src='images/trophy.jpg' width=100% />"+
+    "<img src='images/trophy.jpg' width=150px />"+
     
     "<span style='display:block;' >Points :"+p1points+"</span>"+
      "<span style='display:block;' >Stage :"+p1stage+"</span>"+
@@ -64,7 +63,7 @@ function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2sta
     
     "<div class='col-sm-6 block' >"+
  
-    "<img src='images/trophy.jpg' width=100% />"+
+    "<img src='images/trophy.jpg' width=150px />"+
     
      "<span style='display:block;' >Points :"+p2points+"</span>"+
      "<span style='display:block;' >Stage :"+p2stage+"</span>"+
@@ -75,10 +74,6 @@ function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2sta
     
     "</div>"+
     "<h3>"+winner+" WON</h3>";
-
-  setTimeout(seeBehindCanvas, 10000);
-
-  return true;
 }
 
 
