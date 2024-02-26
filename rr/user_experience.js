@@ -13,7 +13,7 @@ function transport(stage){
 
 
 function game_over(){
-overLay("<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Game Over</span>");
+overLay(show_score(points,stage,game_seconds,moves,"Game Over"));
   setTimeout(seeBehindCanvas, 2000);
     setTimeout(location.reload, 5000);
   //location.reload();
@@ -37,8 +37,9 @@ function hideBehindCanvas(){
 
  
 e('canvas').style.opacity = "1";
-    e('overlay').style.opacity = "1";
-  toggle( e('overlay'));
+  //  e('overlay').style.opacity = "1";
+  e('overlay').style.display = "none";
+
    prepareNextStage();
   
 }
