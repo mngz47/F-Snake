@@ -34,7 +34,7 @@ if(activeChallenge){
 gameEnd();
 }
 
-game_over();
+gameOver();
 game_over = true;
 
 
