@@ -12,7 +12,7 @@ function transport(stage){
  }
 
 
-function game_over(){
+function gameOver(){
 overLay(show_score(points,stage,game_seconds,moves,"Game Over"));
   setTimeout(seeBehindCanvas, 2000);
     setTimeout(location.reload, 5000);
