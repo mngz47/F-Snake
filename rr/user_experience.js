@@ -13,9 +13,9 @@ function transport(stage){
 
 
 function gameOver(){
-overLay(show_score(points,stage,game_seconds,moves,"Game Over"));
+overLay(show_score(points,stage,game_seconds,moves,"<h2>Game Over</h2><a href=# onclick='location.reload();return false;' >reload</a>"));
   setTimeout(seeBehindCanvas, 2000);
-    setTimeout(location.reload, 5000);
+   
   //location.reload();
 }
 
@@ -89,15 +89,16 @@ function show_score(p1points,p1stage,p1seconds,p1moves,winner){
     "<div class=row style='text-align:center;font-size:2em;display:block;margin-top:150px;' >"+
     "<div  class='col-sm-6 block' >"+
     "<img src='images/trophy.jpg' width=100% />"+
-     "<span style='display:block;' >Points :"+p1points+"</span>"+
+  "</div>"+
+    "<div class='col-sm-6 block' >"+
+    "</div>"+
+    
+        "<span style='display:block;' >Points :"+p1points+"</span>"+
      "<span style='display:block;' >Stage :"+p1stage+"</span>"+
      "<span style='display:block;'  >Time :"+p1seconds+"</span>"+
      "<span  style='display:block;'  >Speed :"+Math.round(p1stage/p1seconds)+"</span>"+
      "<span  style='display:block;'  >Moves :"+p1moves+"</span>"+
-    "</div>"+
-    "<div class='col-sm-6 block' >"+
-    "</div>"+
-    
+   
     "</div>"+
     "<h3>"+winner+"</h3>";
 
