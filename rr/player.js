@@ -254,8 +254,10 @@ function iniPlayer(ele,player,strategy){
       this.strategy = strategy;
 
    resetMenus()
-   
+
+   if(ele){
    ele.className += " block_hoov";
+   }
    
    setInterval(findFlower,500*(player_speed[player]));
  
