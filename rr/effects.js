@@ -1,6 +1,6 @@
 function playTheme(){
   
-var audio = new Audio('sounds/theme.mp3');
+var audio = new Audio('sounds/snake_music.mp3');
 audio.play();
   
 }
