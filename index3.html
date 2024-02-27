@@ -27,7 +27,9 @@
 
 	<div style="margin:auto;text-align:center;width:400px;margin-top:300px;padding:20px;" >
 		<p>Avoid the obstacle and make it through the seven stages.</p>
-	<a href=# onclick="start();e('start').style.display='none';return false;" class="btn" >Start</a>
+<!-- e('start').style.display='none'  -->
+		
+	<a href=# onclick="start();this.className+=' fall';return false;" class="btn" >Start</a>
 	<a href=# onclick="showChallenge();toggle(e('challenge'));return false;" class="btn" >Challenge</a>
 	<a href=# onclick="start();e('start').style.display='none';iniPlayer(null,0,2);return false;" class="btn" >Watch Player</a>
 
@@ -156,6 +158,7 @@ setInterval(placeStacle,1000*(8-stage));
 </div>
 	<link rel=stylesheet href=rr/f_snake_style.css />
 	<link rel=stylesheet href=rr/drag_n_drop.css />
+	<link rel=stylesheet href=rr/effects.css />
 	<script>
 			checkChallenge();
 			confirmChallenge();
