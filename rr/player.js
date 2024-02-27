@@ -273,7 +273,7 @@ function iniPlayer(ele,player,strategy){
    }else if(strategy==4){
  setInterval(trailObstacle,300*(player_speed[player])); 
    }else if(strategy==5){
- setIntervaltrailBiasObstacle,300*(player_speed[player])); 
+ setInterval(trailBiasObstacle,300*(player_speed[player])); 
    }
   
 
