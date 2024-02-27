@@ -91,7 +91,7 @@ var game_index_length = rounds*2;
     alert("Active challenge : machine turn to play : round "+ current_round+" of "+rounds);
     e('start').style.display='none';
     start();
-    iniPlayer(0);
+    iniPlayer(null,0,2);
   }
    
 timerId = setInterval(gameTimer,1000);
