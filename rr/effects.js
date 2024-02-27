@@ -3,6 +3,7 @@
 function playTheme(){
   
 var audio = new Audio('sounds/snake_music.mp3');
+  document.body.appendChild(audio);
 audio.play();
   
 }
