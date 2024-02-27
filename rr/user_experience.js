@@ -47,7 +47,7 @@ e('canvas').style.opacity = "1";
 
 function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2stage,p2seconds,p2moves,winner){
 
-return "<div class=row style='background-image:url(\"images/celebrate.gif\");font-size:0.6em;margin-top:150px;' >"+
+return "<div class=row style='background-image:url(\"images/celebrate.gif\");font-size:1.6em;margin-top:150px;' >"+
     "<div  class='col-sm-2' >"+
 "<img src='images/trophy.jpg' width=150px />"+
    "</div>"+
