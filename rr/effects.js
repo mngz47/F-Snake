@@ -30,8 +30,9 @@ function vanish_effect(){
 
 }
 
-function fall_effect(){
-
+function fall_effect(after_task){
+this.className+=' fall';
+  setTimeout(after_task, 3000);
 }
 
 function breath_effect(){
