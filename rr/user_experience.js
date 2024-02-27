@@ -47,6 +47,9 @@ e('canvas').style.opacity = "1";
 
 function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2stage,p2seconds,p2moves,winner){
 
+var st1 = (p1stage/p1seconds);
+  var st2 = (p2stage/p2seconds);
+  
 return "<div class=row style='background-image:url(\"images/celebrate.gif\");font-size:1.6em;margin-top:150px;' >"+
     "<div  class='col-sm-2' >"+
 "<img src='images/trophy.jpg' width=150px />"+
@@ -57,7 +60,7 @@ return "<div class=row style='background-image:url(\"images/celebrate.gif\");fon
     "<span style='display:block;' >Points :"+p1points+"</span>"+
      "<span style='display:block;' >Stage :"+p1stage+"</span>"+
      "<span style='display:block;'  >Time :"+p1seconds+"</span>"+
-     "<span  style='display:block;'  >Speed :"+Math.round(p1stage/p1seconds)+"</span>"+
+     "<span  style='display:block;'  >Speed :"+st1.toFixed(4)+"</span>"+
      "<span  style='display:block;'  >Moves :"+p1moves+"</span>"+
   "</div>"+
     "</div>"+
@@ -67,8 +70,8 @@ return "<div class=row style='background-image:url(\"images/celebrate.gif\");fon
      "<h3 >You</h3>"+
      "<span style='display:block;' >Points :"+p2points+"</span>"+
      "<span style='display:block;' >Stage :"+p2stage+"</span>"+
-     "<span style='display:block;'  >Time :"+p2seconds+"</span>"+
-     "<span  style='display:block;' >Speed :"+Math.round(p2stage/p2seconds)+"</span>"+
+     "<span style='display:block;'  >Time(s) :"+p2seconds+"</span>"+
+     "<span  style='display:block;' >Speed(s/t) :"+st2.toFixed(4)+"</span>"+
      "<span  style='display:block;'  >Moves :"+p2moves+"</span>"+
     "</div>"+
    "</div>"+
@@ -81,6 +84,7 @@ return "<div class=row style='background-image:url(\"images/celebrate.gif\");fon
 function show_score(p1points,p1stage,p1seconds,p1moves,winner){
 
  //setTimeout(seeBehindCanvas, 10000);
+  var st = (p1stage/p1seconds);
   
 return "<div class='row' style='font-size:2em;margin-top:150px;font-color:white;' >"+
     "<div  class='col-sm-6' >"+
@@ -90,8 +94,8 @@ return "<div class='row' style='font-size:2em;margin-top:150px;font-color:white;
     "<div class='col-sm-6' >"+
        "<span style='display:block;' >Points :"+p1points+"</span>"+
      "<span style='display:block;' >Stage :"+p1stage+"</span>"+
-     "<span style='display:block;'  >Time :"+p1seconds+"</span>"+
-     "<span  style='display:block;'  >Speed :"+Math.round(p1stage/p1seconds)+"</span>"+
+     "<span style='display:block;'  >Time(s) :"+p1seconds+"</span>"+
+     "<span  style='display:block;'  >Speed(s/t) :"+st.toFixed(4)+"</span>"+
      "<span  style='display:block;'  >Moves :"+p1moves+"</span>"+
     "</div>"+
     "</div>";
