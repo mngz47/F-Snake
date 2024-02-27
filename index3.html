@@ -30,14 +30,16 @@
 
 		<!-- e('start').style.display='none'  -->
 		
-	<a href=# onclick="start();fall_effect(function(){  e('start').style.display='none'; });return false;" class="btn" >Start</a>
+	<a href=# onclick="start();fall_effect(hideStart);return false;" class="btn" >Start</a>
 	<a href=# onclick="showChallenge();toggle(e('challenge'));return false;" class="btn" >Challenge</a>
 	<a href=# onclick="start();e('start').style.display='none';iniPlayer(null,0,2);return false;" class="btn" >Watch Player</a>
 
 		<div id=challenge style="display:none;" ></div>
 
 		<script>
-
+async function hideStart(){
+ e('start').style.display='none';
+}
 			playTheme();
 		</script>
 		
@@ -129,6 +131,7 @@ setInterval(function(){
 setInterval(placeStacle,1000*(8-stage));
 
 </script>
+	<!--
 <div id=controls style="left:50px;top:0px;" >
 <div id=control-move >Players</div>
 	<a href=# onclick=toggle(e("players")); >toggle</a>
@@ -157,6 +160,7 @@ setInterval(placeStacle,1000*(8-stage));
 		toggle(e("log"));
 	</script>
 </div>
+	 -->
 	<link rel=stylesheet href=rr/f_snake_style.css />
 	<link rel=stylesheet href=rr/drag_n_drop.css />
 	<link rel=stylesheet href=rr/effects.css />
@@ -164,6 +168,9 @@ setInterval(placeStacle,1000*(8-stage));
 			checkChallenge();
 			confirmChallenge();
 	</script>
-	
+	<audio controls id=theme >
+  <source src="sounds/snake_music.mp3" type="audio/mp3">
+  Your browser does not support the audio tag.
+</audio>
 </body>
 </html>
