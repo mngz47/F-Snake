@@ -1,5 +1,7 @@
 var player = 0;
 
+var strategy = 2;
+
 var players = ["Mutant","Ghost","Listro","Bobby","Matthew"];
 
 var player_speed = [0.5,1,3,6,12]; //the smaller the number greater the speed
@@ -8,7 +10,7 @@ var precision = [20,10,20,30,40]; //detection precision - axis size
 
 function showPlayers(target){
 for(var a=0;a<precision.length;a++){
-   target.innerHTML += "<a href=# class=block onclick='iniPlayer("+a+");return false;' >"+players[a]+" ("+player_speed[a]+","+precision[a]+")</a>";
+   target.innerHTML += "<a href=# class=block onclick='iniPlayer(this,"+a+",strategy);return false;' >"+players[a]+" ("+player_speed[a]+","+precision[a]+")</a>";
 }
 }
 
@@ -225,10 +227,55 @@ async function trailBiasObstacle(){
    }     
 }
 
-function iniPlayer(player){
+var strategies = ["moveOppositeObstacle","moveAroundObstacle","moveAroundObstacle2","moveAroundObstacle3","trailObstacle","trailBiasObstacle"];
+//.block_hoov
+
+function resetMenus(){
+var players = e('players').getElementsByTagName('a');
+   for(var aa=0;aa<players.length;aa++){
+      players[aa].className.replace("block_hoov","");
+   }
+
+ players = e('strategy').getElementsByTagName('a');
+   for(var aa=0;aa<players.length;aa++){
+      players[aa].className.replace("block_hoov","");
+   }
+   
+}
+
+function showStrategy(target){
+for(var a=0;a< strategies.length;a++){
+   target.innerHTML += "<a href=# class=block onclick='iniPlayer(this,player,"+a+");return false;' >"+ strategies[a]+"()</a>";
+}
+}
+
+function iniPlayer(ele,player,strategy){
      this.player = player;
+      this.strategy = strategy;
+
+   resetMenus()
+   
+   ele.className += " block_hoov";
+   
    setInterval(findFlower,500*(player_speed[player]));
-  // setInterval(trailBiasObstacle,500*(player_speed[player]));
+ 
+   // setInterval(trailBiasObstacle,500*(player_speed[player]));
   // setInterval(moveAroundObstacle,500*(player_speed[player])); 
-   setInterval(moveAroundObstacle,300*(player_speed[player])); 
+
+   if(strategy==0){
+ setInterval(moveOppositeObstacle,300*(player_speed[player])); 
+   }else if(strategy==1){
+ setInterval(moveAroundObstacle,300*(player_speed[player])); 
+   }else if(strategy==2){
+ setInterval(moveAroundObstacle2,300*(player_speed[player])); 
+   }else if(strategy==3){
+ setInterval(moveAroundObstacle3,300*(player_speed[player])); 
+   }else if(strategy==4){
+ setInterval(trailObstacle,300*(player_speed[player])); 
+   }else if(strategy==5){
+ setIntervaltrailBiasObstacle,300*(player_speed[player])); 
+   }
+  
+
+   
 }
