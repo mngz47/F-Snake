@@ -75,7 +75,7 @@ async function moveAroundObstacle2(){
       var food_dist = (e('food').offsetTop-e('head').offsetTop);
         //alert("x detect "+food_dist);
 
-         e('log').innerHTML += "<span style='color:white;display:block;' >x detect "+food_dist+ "</span>";
+      //   e('log').innerHTML += "<span style='color:white;display:block;' >x detect "+food_dist+ "</span>";
        if(((e('food').offsetTop+precision[player])>e('head').offsetTop && (e('food').offsetTop-precision[player])<e('head').offsetTop)){ //detect x axis of stacle
           
       if(food_dist<0){
@@ -101,7 +101,7 @@ async function moveAroundObstacle2(){
       var food_dist = (e('food').offsetLeft-e('head').offsetLeft);
      // alert("y detect "+food_dist);
       
-      e('log').innerHTML += "<span style='color:white;display:block;' >y detect "+food_dist+ "</span>";
+   //   e('log').innerHTML += "<span style='color:white;display:block;' >y detect "+food_dist+ "</span>";
       
       if(((e('food').offsetLeft+precision[player])>e('head').offsetLeft && (e('food').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect y axis of stacle
       if(food_dist<0){
@@ -130,11 +130,11 @@ async function moveAroundObstacle3(){
       var stacle_dist = (e('stacle').offsetTop-e('head').offsetTop);
         //alert("x detect "+food_dist);
 
-         e('log').innerHTML += "<span style='color:white;display:block;' >x detect s("+stacle_dist+ ")</span>";
+     //    e('log').innerHTML += "<span style='color:white;display:block;' >x detect s("+stacle_dist+ ")</span>";
       
       if(((e('food').offsetTop+precision[player])>e('head').offsetTop && (e('food').offsetTop-precision[player])<e('head').offsetTop)){ //detect x axis of stacle
 
-e('log').innerHTML += "<span style='color:white;display:block;' >x detect f("+food_dist+")</span>";
+  // e('log').innerHTML += "<span style='color:white;display:block;' >x detect f("+food_dist+")</span>";
          
 if(stacle_dist<0){
          d = "r";
@@ -160,11 +160,11 @@ if(stacle_dist<0){
       var stacle_dist = (e('stacle').offsetLeft-e('head').offsetLeft);
      // alert("y detect "+food_dist);
       
-      e('log').innerHTML += "<span style='color:white;display:block;' >y detect s("+stacle_dist+ ")</span>";
+    //  e('log').innerHTML += "<span style='color:white;display:block;' >y detect s("+stacle_dist+ ")</span>";
       
       if(((e('food').offsetLeft+precision[player])>e('head').offsetLeft && (e('food').offsetLeft-precision[player])<e('head').offsetLeft)){ //detect y axis of stacle
 
-e('log').innerHTML += "<span style='color:white;display:block;' >y detect f("+food_dist+")</span>";
+// e('log').innerHTML += "<span style='color:white;display:block;' >y detect f("+food_dist+")</span>";
       
          
 if(stacle_dist<0){
