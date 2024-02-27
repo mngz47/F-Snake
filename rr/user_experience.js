@@ -1,6 +1,4 @@
 
-var canvas = "";
-
 function transport(stage){
 
   overLay("<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>"
