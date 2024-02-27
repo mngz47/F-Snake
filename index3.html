@@ -166,13 +166,18 @@ setInterval(placeStacle,1000*(8-stage));
 	<link rel=stylesheet href=rr/effects.css />
 
 <audio controls id=theme  >
-  <source src="sounds/snake_music.mp3" type="audio/mp3">
+  <source src="sounds/snake_music.mp3" type="audio/mp3" loop="loop" >
+  Your browser does not support the audio tag.
+</audio>
+<audio controls id=snake_death_sound  >
+  <source src="sounds/f_snake_death.mp3" type="audio/mp3" >
   Your browser does not support the audio tag.
 </audio>
 	<script>
 			checkChallenge();
 			confirmChallenge();
 		toggle(e('theme'));
+		toggle(e('snake_death_sound'));
 			playTheme();
 	</script>
 	
