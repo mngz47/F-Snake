@@ -252,10 +252,9 @@ for(var a=0;a< strategies.length;a++){
 function iniPlayer(ele,player,strategy){
      this.player = player;
       this.strategy = strategy;
-
-   resetMenus()
-
+      
    if(ele){
+       resetMenus();
    ele.className += " block_hoov";
    }
    
