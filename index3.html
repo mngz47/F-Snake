@@ -96,7 +96,8 @@ var speed = 60;
 var game_over = false;
 
 async function start(){
-
+playTheme();
+	
 while(!game_over){ //continuosly move the snake head so long as the game is not over
 
 f_navigate();
@@ -112,6 +113,9 @@ speed = Math.round((40 - 40 * (points*3)/15)); //increases speed of the snake as
 await new Promise(r => setTimeout(r, speed));
 
 }
+
+	
+
 }
 
 //start();
