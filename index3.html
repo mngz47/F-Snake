@@ -24,29 +24,19 @@
 	<script src=rr/effects.js ></script>
 	
 <div id=start style="position: absolute;background-color:rgba(0,0,0,0.7);width:100%;height:100%;" >
+</div>	
+	
+<script>
 
-	<div style="margin:auto;text-align:center;width:400px;margin-top:300px;padding:20px;" >
-		<p>Avoid the obstacle and make it through the seven stages.</p>
-
-		<!-- e('start').style.display='none'  -->
-		
-	<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall" >Start</a>
-	<a href=# onclick="showChallenge();toggle(e('challenge'));return false;" class="btn" >Challenge</a>
-	<a href=# onclick="start();e('start').style.display='none';iniPlayer(null,0,2);return false;" class="btn" >Watch Player</a>
-
-		<div id=challenge style="display:none;" ></div>
-
-		<script>
+e('start').innerHTML +=  main_menu();
+	
 async function hideStart(){
  e('start').style.display='none';
 }
 		
-		</script>
-		
-	</div>
+</script>
 	
-</div>	
-	<iframe id=four_target src="https://mngz47.github.io/F-Snake/header.html" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+<iframe id=four_target src="https://mngz47.github.io/F-Snake/header.html" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 
 <div style="width:600px;margin-left:auto;margin-right:auto;background:rgba(128,128,128,0.6);" >
 <div style="width:600px;" >
