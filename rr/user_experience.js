@@ -14,7 +14,7 @@ function transport(stage){
 function gameOver(){
 
 	e("start").innerHTML = (show_score(points,stage,game_seconds,moves,"<h2>Game Over</h2><a href=# onclick='location.reload();return false;' >Reload</a>"));
-	 toggle("start");
+	
 	
 }
 	
