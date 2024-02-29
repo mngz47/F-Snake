@@ -44,8 +44,7 @@ e('canvas').style.opacity = "1";
 
 function main_menu(){
 
-  	return 
-      '<div id=main_menu style="margin:auto;text-align:center;width:400px;margin-top:300px;padding:20px;" >'+
+  return '<div id=main_menu style="margin:auto;text-align:center;width:400px;margin-top:300px;padding:20px;" >'+
       '<p>Avoid the obstacle and make it through the seven stages.</p>'+
   '<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall" >Start</a>'+
 	'<a href=# onclick="showChallenge();toggle(e(\'challenge\'));return false;" class="btn" >Challenge</a>'+
@@ -56,11 +55,11 @@ function main_menu(){
 
 function footer_menu(){
 
-  '<div id=footer_menu style="display:block;float:right;" >'+
-  '<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall" >Start</a>'+
-	'<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall" >Start</a>'+
-	'<a href=# onclick="showChallenge();toggle(e(\'challenge\'));return false;" class="btn" >Challenge</a>'+
-	'<a href=# onclick="start();e(\'start\').style.display=\'none\';iniPlayer(null,0,2);return false;" class="btn" >Watch Player</a>'+
+ return '<div id=footer_menu style="display:block;float:right;" >'+
+  	'<a href=https://github.com/mngz47/F-Snake/tree/main class="fall" >Contribute</a>'+
+	'<a href=https://github.com/mngz47/F-Snake/releases/tag/snake%2Chtml5%2Cgame class="fall" >Releases</a>'+
+	'<a href=https://www.instagram.com/mongezisibongakonke >Follow on IG</a>'+
+	'<a href=privacy_policy.html >Privacy Policy</a>'+
   '</div>';
   
 }
