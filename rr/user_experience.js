@@ -1,7 +1,7 @@
 
 function transport(stage){
 
-	  toggle("start");
+  e("start").style.display = "";
   e("start").innerHTML = ("<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>"
          +"<img src=images/wormhole.gif width=100% />");
 
@@ -14,7 +14,7 @@ function transport(stage){
 
 function gameOver(){
 
-	 toggle("start");
+	e("start").style.display = "";
 	e("start").innerHTML = (show_score(points,stage,game_seconds,moves,"<h2>Game Over</h2><a href=# onclick='location.reload();return false;' >Reload</a>"));
   
 	
