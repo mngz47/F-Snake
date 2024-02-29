@@ -46,9 +46,9 @@ function main_menu(){
 
   return '<div id=main_menu style="margin:auto;text-align:center;width:400px;margin-top:300px;padding:20px;" >'+
       	'<p>Avoid the obstacle and make it through the seven stages.</p>'+
-  	'<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall" >Start</a>'+
-	'<a href=# onclick="showChallenge();toggle(e(\'challenge\'));return false;" class="btn" >Challenge</a>'+
-	'<a href=# onclick="start();e(\'start\').style.display=\'none\';iniPlayer(null,0,2);return false;" class="btn" >Watch Player</a>'+
+  	'<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall space" >Start</a>'+
+	'<a href=# onclick="showChallenge();toggle(e(\'challenge\'));return false;" class="btn space" >Challenge</a>'+
+	'<a href=# onclick="start();e(\'start\').style.display=\'none\';iniPlayer(null,0,2);return false;" class="btn space" >Watch Player</a>'+
   '<div id=challenge style="display:none;" ></div></div>';
 
 }
