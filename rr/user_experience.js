@@ -23,6 +23,11 @@ function overLay(content){
    document.body.innerHTML += "<div id=start style='position: absolute;background-color:rgba(0,0,0,0.7);left:0px;top:0px;width:100%;height:100%;' >"+content+"</div>";
 }
 
+	
+function hideStart(){
+ e('start').style.display='none';
+}
+
 function seeBehindCanvas(){
 
     e('canvas').style.opacity = "0.4";
@@ -32,23 +37,21 @@ setTimeout(hideBehindCanvas, 2000);
 }
 
 function hideBehindCanvas(){
-
  
 e('canvas').style.opacity = "1";
-  //  e('start').style.opacity = "1";
+    e('start').style.opacity = "1";
   e('start').style.display = "none";
 
    prepareNextStage();
-  
 }
 
 function main_menu(){
 
   return '<div id=main_menu style="margin:auto;text-align:center;width:400px;margin-top:300px;padding:20px;" >'+
       	'<p>Avoid the obstacle and make it through the seven stages.</p>'+
-  	'<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall space" >Start</a>'+
+  	'<a href=# onclick="hideStart();start();return false;" class="btn fall space" >Start</a>'+
 	'<a href=# onclick="showChallenge();toggle(e(\'challenge\'));return false;" class="btn space" >Challenge</a>'+
-	'<a href=# onclick="start();e(\'start\').style.display=\'none\';iniPlayer(null,0,2);return false;" class="btn space" >Watch Player</a>'+
+	'<a href=# onclick="start();hideStart();iniPlayer(null,0,2);return false;" class="btn space" >Watch Player</a>'+
   '<div id=challenge style="display:none;" ></div></div>';
 
 }
@@ -101,10 +104,8 @@ return "<div class=row style='background-size: 100% auto;background-repeat:none;
     "</div>";
 }
 
-
 function show_score(p1points,p1stage,p1seconds,p1moves,winner){
 
- //setTimeout(seeBehindCanvas, 10000);
   var st = (p1stage/p1seconds);
   
 return "<div class='row' style='font-size:2em;margin-top:150px;font-color:white;' >"+
