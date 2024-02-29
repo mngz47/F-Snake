@@ -56,10 +56,10 @@ function main_menu(){
 function footer_menu(){
 
  return '<div id=footer_menu style="display:block;float:right;" >'+
-  	'<a href=https://github.com/mngz47/F-Snake/tree/main class="fall" >Contribute</a>'+
-	'<a href=https://github.com/mngz47/F-Snake/releases/tag/snake%2Chtml5%2Cgame class="fall" >Releases</a>'+
-	'<a href=https://www.instagram.com/mongezisibongakonke >Follow on IG</a>'+
-	'<a href=privacy_policy.html >Privacy Policy</a>'+
+  	'<a href=https://github.com/mngz47/F-Snake/tree/main class="fall" style="display:inline-block;" >Contribute</a>'+
+	'<a href=https://github.com/mngz47/F-Snake/releases/tag/snake%2Chtml5%2Cgame class="fall" style="display:inline-block;" >Releases</a>'+
+	'<a href=https://www.instagram.com/mongezisibongakonke style="display:inline-block;" >Follow on IG</a>'+
+	'<a href=privacy_policy.html style="display:inline-block;" >Privacy Policy</a>'+
   '</div>';
   
 }
