@@ -24,6 +24,10 @@ User Experience: Start Screen - with main menu consisting start button, chal
 
 
 Game Over Screen with Points, Stage, Time, Speed, Moves. Five factors used to measure user performance. On game over user is prompted to improve performance.
+
+![image](https://github.com/mngz47/F-Snake/assets/15697629/802d7ef3-507a-453c-b769-0c14a48b0e4b)
+
+
 Challenge Screen: The user can choose rounds in order to improve chances of reaching stage seven.
 stats remain in memory for 30 days even after challenge is complete.
 
