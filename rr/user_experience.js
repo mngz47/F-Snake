@@ -36,7 +36,7 @@ function hideBehindCanvas(){
  
 e('canvas').style.opacity = "1";
     e('start').style.opacity = "1";
-   toggle("start");
+   e('start').style.display='none';
 
    prepareNextStage();
 }
