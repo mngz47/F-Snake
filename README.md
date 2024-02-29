@@ -14,16 +14,15 @@ https://mngz47.github.io/F-Snake/index2.html
 ![image](https://github.com/mngz47/F-Snake/assets/15697629/8ae6e058-d67b-4872-84f8-800d5adf21e9)
 
 Flower snake f-snake v3
+https://mngz47.github.io/F-Snake/index3.html
 
-Game Summary: The snake eats flower and avoids x obstacle that increase speed every stage. The objective is to make it to stage seven - during challenge whoever makes it to stage seven in either round wins by default.
-
+Game Summary: The snake eats flower and avoids x obstacle that increases speed every stage. The objective is to make it to stage seven - during challenge whoever makes it to stage seven in either round wins by default.
 Feature: Classic theme song, Effects, draggable controls, auto players, challenge player.
+User Experience: Start Screen - with main menu consisting start button, challenge and watch player. footer menu with contribute, releases, privacy and follow on IG
 
-User Experience: Points, Stage, Time, Speed, Moves. Five factors used to measure user perfomance.
-
-On game over user is prompted to improve perfomance.
-Challenge stats remain in memory for 30 days.
-
+Game Over Screen with Points, Stage, Time, Speed, Moves. Five factors used to measure user performance. On game over user is prompted to improve performance.
+Challenge Screen: The user can choose rounds in order to improve chances of reaching stage seven.
+stats remain in memory for 30 days even after challenge is complete.
 
 Contributions are welcome.
 
