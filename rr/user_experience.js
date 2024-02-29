@@ -20,13 +20,13 @@ overLay(show_score(points,stage,game_seconds,moves,"<h2>Game Over</h2><a href=# 
 
 function overLay(content){
 
-   document.body.innerHTML += "<div id=overlay style='position: absolute;background-color:rgba(0,0,0,0.7);left:0px;top:0px;width:100%;height:100%;' >"+content+"</div>";
+   document.body.innerHTML += "<div id=start style='position: absolute;background-color:rgba(0,0,0,0.7);left:0px;top:0px;width:100%;height:100%;' >"+content+"</div>";
 }
 
 function seeBehindCanvas(){
 
     e('canvas').style.opacity = "0.4";
-  e('overlay').style.opacity = "0.4";
+  e('start').style.opacity = "0.4";
 setTimeout(hideBehindCanvas, 2000);
  
 }
@@ -35,13 +35,35 @@ function hideBehindCanvas(){
 
  
 e('canvas').style.opacity = "1";
-  //  e('overlay').style.opacity = "1";
-  e('overlay').style.display = "none";
+  //  e('start').style.opacity = "1";
+  e('start').style.display = "none";
 
    prepareNextStage();
   
 }
 
+function main_menu(){
+
+  	return 
+      '<div id=main_menu style="margin:auto;text-align:center;width:400px;margin-top:300px;padding:20px;" >'+
+      '<p>Avoid the obstacle and make it through the seven stages.</p>'+
+  '<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall" >Start</a>'+
+	'<a href=# onclick="showChallenge();toggle(e(\'challenge\'));return false;" class="btn" >Challenge</a>'+
+	'<a href=# onclick="start();e(\'start\').style.display=\'none\';iniPlayer(null,0,2);return false;" class="btn" >Watch Player</a>'+
+  '<div id=challenge style="display:none;" ></div></div>';
+
+}
+
+function footer_menu(){
+
+  '<div id=footer_menu style="display:block;float:right;" >'+
+  '<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall" >Start</a>'+
+	'<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall" >Start</a>'+
+	'<a href=# onclick="showChallenge();toggle(e(\'challenge\'));return false;" class="btn" >Challenge</a>'+
+	'<a href=# onclick="start();e(\'start\').style.display=\'none\';iniPlayer(null,0,2);return false;" class="btn" >Watch Player</a>'+
+  '</div>';
+  
+}
 
 function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2stage,p2seconds,p2moves,winner){
 
@@ -73,7 +95,7 @@ return "<div class=row style='background-image:url(\"images/celebrate.gif\");fon
      "<span  style='display:block;'  >Moves :"+p2moves+"</span>"+
     "</div>"+
    "</div>"+
-    
+     main_menu()
     "</div>"+
     "<h3>"+winner+" WON</h3>";
 }
