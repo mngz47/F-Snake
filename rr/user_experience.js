@@ -94,8 +94,8 @@ return "<div class=row style='background-size: 100% auto;background-repeat:none;
      "<span  style='display:block;'  >Moves :"+p2moves+"</span>"+
     "</div>"+
    "</div>"+
-	"<div  class='block' >"+
      main_menu()+
+	"<div  class='block' style='text-align:center;' >"+
 	"<h4>"+winner+" WON</h4>"+
 	"</div>"+
     "</div>";
