@@ -69,7 +69,7 @@ function show_challenge_winner(p1points,p1stage,p1seconds,p1moves,p2points,p2sta
 var st1 = (p1stage/p1seconds);
   var st2 = (p2stage/p2seconds);
   
-return "<div class=row style='background-image:url(\"images/celebrate.gif\");font-size:1.6em;margin-top:150px;' >"+
+return "<div class=row style='background-size: 100% auto;background-repeat:none;background-image:url(\"images/celebrate.gif\");font-size:1.6em;margin-top:150px;' >"+
     "<div  class='col-sm-2' >"+
 "<img src='images/trophy.jpg' width=150px />"+
    "</div>"+
@@ -94,9 +94,11 @@ return "<div class=row style='background-image:url(\"images/celebrate.gif\");fon
      "<span  style='display:block;'  >Moves :"+p2moves+"</span>"+
     "</div>"+
    "</div>"+
-     main_menu()
-    "</div>"+
-    "<h3>"+winner+" WON</h3>";
+	"<div  class='block' >"+
+     main_menu()+
+	"<h4>"+winner+" WON</h4>"+
+	"</div>"+
+    "</div>";
 }
 
 
