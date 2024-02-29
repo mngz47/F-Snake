@@ -128,8 +128,10 @@ p2points+=10;
   p1points+=10;
  }
 
-   overLay(show_challenge_winner(p1points,Math.round(p1points/14),p1seconds,p1moves,p2points,Math.round(p1points/14),p1seconds,p2moves,(p2points>p1points?"You":"Machine")));
+    e("start").innerHTML = (show_challenge_winner(p1points,Math.round(p1points/14),p1seconds,p1moves,p2points,Math.round(p1points/14),p1seconds,p2moves,(p2points>p1points?"You":"Machine")));
 
+    toggle("start");
+   
   //  alert(document.cookie);
     deleteAllCookies()
  }
