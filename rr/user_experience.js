@@ -1,7 +1,7 @@
 
 function transport(stage){
 
-  overLay("<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>"
+  e("start").innerHTML = ("<span style='text-align:center;font-size:2em;display:block;margin-top:150px;' >Stage "+stage+"...</span>"
          +"<img src=images/wormhole.gif width=100% />");
   
   setTimeout(seeBehindCanvas, 2000);
@@ -11,18 +11,10 @@ function transport(stage){
 
 
 function gameOver(){
-overLay(show_score(points,stage,game_seconds,moves,"<h2>Game Over</h2><a href=# onclick='location.reload();return false;' >Reload</a>"));
+
+	e("start").innerHTML = (show_score(points,stage,game_seconds,moves,"<h2>Game Over</h2><a href=# onclick='location.reload();return false;' >Reload</a>"));
  
-  // setTimeout(seeBehindCanvas, 2000); 
-  //location.reload();
 }
-
-
-function overLay(content){
-
-   document.body.innerHTML += "<div id=start style='position: absolute;background-color:rgba(0,0,0,0.7);left:0px;top:0px;width:100%;height:100%;' >"+content+"</div>";
-}
-
 	
 function hideStart(){
  e('start').style.display='none';
