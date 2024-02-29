@@ -45,8 +45,8 @@ e('canvas').style.opacity = "1";
 function main_menu(){
 
   return '<div id=main_menu style="margin:auto;text-align:center;width:400px;margin-top:300px;padding:20px;" >'+
-      '<p>Avoid the obstacle and make it through the seven stages.</p>'+
-  '<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall" >Start</a>'+
+      	'<p>Avoid the obstacle and make it through the seven stages.</p>'+
+  	'<a href=# onclick="fall_effect();hideStart();start();return false;" class="btn fall" >Start</a>'+
 	'<a href=# onclick="showChallenge();toggle(e(\'challenge\'));return false;" class="btn" >Challenge</a>'+
 	'<a href=# onclick="start();e(\'start\').style.display=\'none\';iniPlayer(null,0,2);return false;" class="btn" >Watch Player</a>'+
   '<div id=challenge style="display:none;" ></div></div>';
@@ -56,10 +56,10 @@ function main_menu(){
 function footer_menu(){
 
  return '<div id=footer_menu style="display:block;float:right;" >'+
-  	'<a href=https://github.com/mngz47/F-Snake/tree/main class="fall" style="display:inline-block;" >Contribute</a>'+
-	'<a href=https://github.com/mngz47/F-Snake/releases/tag/snake%2Chtml5%2Cgame class="fall" style="display:inline-block;" >Releases</a>'+
-	'<a href=https://www.instagram.com/mongezisibongakonke style="display:inline-block;" >Follow on IG</a>'+
-	'<a href=privacy_policy.html style="display:inline-block;" >Privacy Policy</a>'+
+  	'<a href=https://github.com/mngz47/F-Snake/tree/main class="fall space" style="display:inline-block;" >Contribute</a>'+
+	'<a href=https://github.com/mngz47/F-Snake/releases/tag/snake%2Chtml5%2Cgame class="fall space" style="display:inline-block;" >Releases</a>'+
+	'<a href=https://www.instagram.com/mongezisibongakonke class="fall space" style="display:inline-block;" >Follow on IG</a>'+
+	'<a href=privacy_policy.html class="fall space" style="display:inline-block;" >Privacy Policy</a>'+
   '</div>';
   
 }
