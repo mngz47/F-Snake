@@ -20,6 +20,9 @@ Game Summary: The snake eats flower and avoids x obstacle that increases speed e
 Feature: Classic theme song, Effects, draggable controls, auto players, challenge player.
 User Experience: Start Screen - with main menu consisting start button, challenge and watch player. footer menu with contribute, releases, privacy and follow on IG
 
+![image](https://github.com/mngz47/F-Snake/assets/15697629/df4bc762-aa4a-4135-91bd-40df2af3ff52)
+
+
 Game Over Screen with Points, Stage, Time, Speed, Moves. Five factors used to measure user performance. On game over user is prompted to improve performance.
 Challenge Screen: The user can choose rounds in order to improve chances of reaching stage seven.
 stats remain in memory for 30 days even after challenge is complete.
