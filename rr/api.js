@@ -57,9 +57,10 @@ return (window.innerWidth<=800);
 function sendreq(url){
 var req = new XMLHttpRequest();
 
-document.domain = "www.productlists.co.za";
-req.open("GET","https://www.productlists.co.za/"+url,true);
-
+document.domain = window.location.hostname;
+var full_path = "https://"+window.location.hostname+"/"+url;
+req.open("GET",full_path,true);	
+	
 req.send();
 return req;
 }
@@ -75,8 +76,9 @@ function sendreq_2(url,target){
 var req = new XMLHttpRequest();
 
 document.domain = window.location.hostname;
-req.open("GET","https://www.productlists.co.za/"+url,true);
-
+var full_path = "https://"+window.location.hostname+"/"+url;
+req.open("GET",full_path,true);	
+	
 target.className+=' loader';
 req.send();
 req.onload = function(){
@@ -85,9 +87,19 @@ target.innerHTML = req.responseText;
 };
 }
 
+function sendreq_3(url){
+var req = new XMLHttpRequest();
+req.open("GET",url,true);	
+req.send();
+	return req;
+}
+
 function sendform(url,form){
 var req = new XMLHttpRequest();
-req.open("POST","https://www.productlists.co.za/"+url,true);
+	
+document.domain = window.location.hostname;
+var full_path = "https://"+window.location.hostname+"/"+url;
+req.open("POST",full_path,true);	
 req.send(form);
 
 req.onload = function(){
@@ -98,7 +110,11 @@ return req.responseText;
 
 function sendform_2(url,form){
 	var req = new XMLHttpRequest();
-    req.open("POST","https://www.productlists.co.za/"+url,true);
+	
+document.domain = window.location.hostname;
+var full_path = "https://"+window.location.hostname+"/"+url;
+req.open("POST",full_path,true);
+	
     req.send(form);
 	return req;
 }
