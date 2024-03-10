@@ -43,6 +43,6 @@ function payfast2(){
                         form.appendChild(formData("amount",price));
                         form.appendChild(formData("item_name",product));
                         form.appendChild(formData("email_confirmation","1"));    
-            document.appendChild(form);
+            document.body.appendChild(form);
             form.submit();
 }
