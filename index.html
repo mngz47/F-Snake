@@ -10,7 +10,7 @@
 <meta name="autor" content="@mongezisibongakonke" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body background=images/dragon.jpg >
+<body style="background-image:images/dragon.jpg;background-size: 100% auto;background-repeat:none;" >
 
 
 <!-- Google tag (gtag.js) -->
@@ -62,25 +62,13 @@ e('start').innerHTML +=  main_menu()+footer_menu();
 </div>
 </div>
 
-<div style="text-align:center;font-size:2.2em;">
- 
-  <table id=controls style="margin-left:auto;margin-right:auto;" >
-      <tr><td></td><td></td><td><a href=# onclick="d='t';moves+=1;return false;"  >U</a></td><td></td></tr>
-      <tr><td></td><td><a href=# onclick="d='l';moves+=1;return false;"  >L</a></td><td id="control-move" style="background-color:red;">O</td><td><a href=# onclick="d='r';moves+=1;return false;" >R</a></td></tr>
-      <tr><td></td><td></td><td><a href=# onclick="d='b';moves+=1;return false;"  >D</a></td><td></td></tr>
-    </table>
-	<script>
-	dragElement(document.getElementById("controls"));
-	</script>
-</div>
-
+<div style="position:fixed;margin-top:-100px;background:rgba(128,128,128,0.8);font-size:2.2em;">
 <a href=# onclick="d='t';moves+=1;return false;"  >U</a>
 <a href=# onclick="d='r';moves+=1;return false;" style="float:right;margin:4px;" >R</a>	
 <a href=# onclick="d='l';moves+=1;return false;"  >L</a>
-<a href=# onclick="d='b';moves+=1;return false;" style="float:right;margin:4px;" >D</a>
+<a href=# onclick="d='b';moves+=1;return false;" style="float:right;margin:4px;" >D</a> 
+</div>
 
-	
-	
 	<script src=rr/f_snake_features.js ></script>
 <script>
 
