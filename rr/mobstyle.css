@@ -87,4 +87,12 @@ overflow-y:none;
 overflow-x:hidden;
 }
 
+  #controls {
+display:none;
+  }
+
 }
+
+#mobile-controls {
+display:none;
+  }
