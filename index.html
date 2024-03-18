@@ -4,7 +4,7 @@
 <title>F Snake</title>
 <link rel=stylesheet href=rr/style.css />
 <link rel=stylesheet href=rr/bootstrap.min.css />
-<link rel=stylesheet href=rr/mobstyle.css />
+
 <link rel="icon" type="image/jpg" href="https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg">
 
 <meta name="autor" content="@mongezisibongakonke" />
@@ -69,6 +69,14 @@ e('start').innerHTML +=  main_menu()+footer_menu();
       <tr><td></td><td><a href=# onclick="d='l';moves+=1;return false;"  >L</a></td><td id="control-move" style="background-color:red;">O</td><td><a href=# onclick="d='r';moves+=1;return false;" >R</a></td></tr>
       <tr><td></td><td></td><td><a href=# onclick="d='b';moves+=1;return false;"  >D</a></td><td></td></tr>
     </table>
+
+<div id=mobile-controls >
+<a href=# onclick="d='t';moves+=1;return false;"  >U</a>
+<a href=# onclick="d='r';moves+=1;return false;" style="float:right;margin:4px;" >R</a>	
+<a href=# onclick="d='l';moves+=1;return false;"  >L</a>
+<a href=# onclick="d='b';moves+=1;return false;" style="float:right;margin:4px;" >D</a>
+</div>
+	
 	<script>
 	dragElement(document.getElementById("controls"));
 	</script>
@@ -167,6 +175,7 @@ setInterval(placeStacle,1000*(8-stage));
 	<link rel=stylesheet href=rr/f_snake_style.css />
 	<link rel=stylesheet href=rr/drag_n_drop.css />
 	<link rel=stylesheet href=rr/effects.css />
+	<link rel=stylesheet href=rr/mobstyle.css />
 
 <audio controls id=theme  >
   <source src="sounds/snake_music.mp3" type="audio/mp3" loop="loop" >
