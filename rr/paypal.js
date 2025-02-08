@@ -10,7 +10,7 @@ function paypal() {
     headers: {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ${accessToken}',
-    }
+    },
     body: JSON.stringify({
       "purchase_units": [
         {
